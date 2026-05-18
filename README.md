@@ -4,29 +4,20 @@ The Equine Assay Registry is a collaborative database of immunoassays that have 
 
 ## Purpose
 
-Relatively few immunoassays are developed specifically for equine applications, and research in horses often relies on assays designed for other species. Due to variable cross-species homology, identifying assays that perform reliably in equids can be time-consuming and resource-intensive. We propose to build a free, open, and collaborative repository of immunoassay validation data to facilitate equine research.
-
-Users can:
-
-- Search for immunoassays and their validation outcomes in horses
-- Submit validation data (both successful and unsuccessful)
-- Link submissions to published works
-- Contribute original validation protocols, which can be assigned a citable DOI
-- Propose updates or additions to existing assay entries
+Relatively few immunoassays are developed specifically for equine applications, and research in horses often relies on assays designed for other species. Due to variable cross-species homology, identifying assays that perform reliably in equids can be time-consuming and resource-intensive. We propose to build a free, open, and collaborative repository of immunoassay validation data to facilitate equine research. Users can search for immunoassays and their validation outcomes in horses as well as submit validation data (both successful and unsuccessful).
 
 ## Contributing and Sharing Validation Data
 
-Anyone can contribute by:
+### Types of contributions
 
-- Submitting new assay validation data via the submission form
-- Proposing updates to existing entries through GitHub issues
+- **Original validation data:** Information on an assay that has not been published before can be submitted using the submission form. Only authors can contribute original validation data. The contribution will be assigned a citable DOI.
+- **Published validation data:** A submission submitted using the submission form can be linked to published works. This is comparable to registering a publication into the database, not to claiming authorship. Contributors are therefore not required to be the authors of the original work. This type of contribution will not be assigned a DOI.
+- **Additions to existing entries:** Additional validation data or changes in assay information (e.g., assay has become unavailable) can be submitted from the entries found in the database. Contributors are required to be the authors of the additional validation data unless they reference published work. The information will be aggregated into a single entry tracking the different submissions.
 
-All submissions are reviewed for consistency and completeness before inclusion in the database.
+### Attribution
 
-### Transparency and Review Process
-
-- The submission process is fully open; all contributions are visible as GitHub issues
-- Rejected submissions will include a documented justification
+- **Authors** refer to those who originally performed the assay validation. Authors can be contribute their data to the repository as contributors and be assigned a citable DOI if the work has not been previously published.
+- **Contributors** are individuals who submit data to the registry. Anyone can contribute published works to the repository but they will not be attributed a DOI.
 
 ### Licensing
 
@@ -34,10 +25,10 @@ All submissions are reviewed for consistency and completeness before inclusion i
 - By submitting content, contributors agree to this license
 - Contributors are responsible for ensuring that their submissions comply with any applicable licenses from original sources (e.g., published validation studies)
 
-### Attribution
+### Transparency and Review Process
 
-- **Authors** refer to those who originally performed the assay validation. Authors can be contribute their data to the repository as contributors and be assigned a citable DOI.
-- **Contributors** are individuals who submit data to the registry. Anyone can contribute published works to the repository but they will not be attributed a DOI.
+- The submission process is fully open; all contributions are visible as GitHub issues
+- Rejected submissions will include a documented justification
 
 ## Backend and Technical Framework
 
@@ -52,4 +43,3 @@ This project is designed to be extensible and adaptable to other domains.
 - The registry focuses on **immunoassays evaluated in equine samples**
 - Validation quality and completeness depend on submitted data
 - Inclusion in the registry does not constitute endorsement of assay performance
-
