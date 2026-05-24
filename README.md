@@ -43,3 +43,10 @@ This project is designed to be extensible and adaptable to other domains.
 - The registry focuses on **immunoassays evaluated in equine samples**
 - Validation quality and completeness depend on submitted data
 - Inclusion in the registry does not constitute endorsement of assay performance
+
+## Use of artificial intelligence (AI)
+
+Microsoft Copilot was used to draft parts of the code in this repository. The
+AI generated code snippets were tested and implemented manually by the author of
+the repository.
+
