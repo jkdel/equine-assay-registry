@@ -1,4 +1,5 @@
 ---
+title: Search
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -20,14 +21,8 @@
 </head>
 
 <body>
-  <a href="https://www.vetmed.msstate.edu/nfllrc">
-    <header id="mhead">
-      <div class="logo"></div>
-    </header>
-  </a>
-  <main>
-    <!-- <div class="banner">
-        </div> -->
+  {% include header.html%}
+  <main class="container">
     
     <p>
       The Equine Assay Registry is a collaborative database of immunoassays that have been tested (sucessfully and
@@ -35,18 +30,23 @@
       efficiency in equine research by reducing duplicated effort.
     </p>
     
+    {% assign assays = "" | split: "" %}
+    {% for submission in site.data %}
+      {% assign d = submission[1] %}
+      {% assign assays = assays | push: d.assay.descriptor %}
+    {% endfor %}
+    {% assign assays = assays | uniq %}
+
     <div x-data="{
           search: '',
           assays: [
-          { id: 1, species: 'equine', target: 'insulin', manufacturer: 'Mercodia', type: 'ELISA', descriptor: 'Mercodia equine insulin ELISA' },
-          { id: 2, species: 'human', target: 'insulin', manufacturer: 'Siemens', type: 'CLIA', descriptor: 'IMMULITE 2000XPi human insulin CLIA' },
-          { id: 3, species: 'human', target: 'insulin', manufacturer: 'Tosoh', type: 'CLIA', descriptor: 'Tosoh AIA-360 human insulin FEIA' },
+            {% for assay in assays %}{descriptor: '{{assay}}'}, {% endfor %}
           ],
           // 2. Define a getter function to return the filtered list dynamically
           get assay_filter() {
             if(this.search) {
               return this.assays.filter(assay => {
-                return assay.descriptor.toLowerCase().includes(this.search.toLowerCase()); /* || assay.manufacturer.toLowerCase().includes(this.search.toLowerCase()); */
+                return assay.descriptor.toLowerCase().includes(this.search.toLowerCase());
               });
             } else {
               return false;
@@ -55,12 +55,11 @@
                       }">
     
       <h2>Start searching for an assay</h2>
-      <input type="search" name="search" x-model="search" placeholder="Target, method, manufacturer…">
-        <template x-for="assay in assay_filter" :key="assay.id">
+      <input type="search" id="msearch" x-model="search" placeholder="Target, method, manufacturer…">
+        <template x-for="assay in assay_filter">
           <a x-bind:href="'detail.html?descriptor=' + assay.descriptor" class="no-underline">
-            <div class="cardish">
-              <h2 x-text="assay.descriptor"></h2>
-              <p x-text="assay.type"></p>
+            <div class="cardish ares">
+              <h3 x-text="assay.descriptor"></h2>
             </div>
           </a>
         </template>

@@ -1,3 +1,6 @@
+---
+title: Submit
+---
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
@@ -12,11 +15,7 @@
 </head>
 
 <body>
-  <a href="https://www.vetmed.msstate.edu/nfllrc">
-    <header id="mhead">
-      <div class="logo"></div>
-    </header>
-  </a>
+  {% include header.html%}
 
 <main class="container" x-data="assayRegistryForm()">
   <header>
@@ -93,32 +92,39 @@
 
       <div class="grid">
         <label>
-          <!-- TODO: Compare with assays in database (target + ref), if same, ask to confirm that this is a new submission, not a change to previous submission -->
-          <span class="required">Assay manufacturer catalog number</span>
-          <input type="text" x-model.trim="assay.manufacturerRef" placeholder="Catalog # / Product ID" required/>
-        </label>
-        <label>
           <span class="required">Manufacturer</span>
           <input type="text" x-model.trim="assay.manufacturer" placeholder="Company name" required/>
+        </label>
+        <label>
+          <span>Platform</span>
+          <input type="text" x-model.trim="assay.platform" placeholder="e.g., IMMULITE 2000 XPi"/>
+        </label>
+        <label>
+          <span>Suggested descriptor</span>
+          <input type="text" x-model.trim="assay.descriptor" placeholder="e.g., [Manufacturer] [Species] [Target] [Type]"/>
+        </label>
+      </div>
+
+      <div class="grid">
+        <label>
+          <span class="required">Assay manufacturer catalog number</span>
+          <input type="text" x-model.trim="assay.manufacturerRef" placeholder="Catalog # / Product ID" required/>
         </label>
         <label>
           <span class="required">Vendor/manufacturer URL</span>
           <input type="url" x-model.trim="assay.url" placeholder="https://…" required/>
         </label>
-      </div>
-
       <label>
-        <span class="required">Assay availability</span>
-        <select x-model="assay.availability" required>
+        <span>Assay availability</span>
+        <select x-model="assay.availability">
           <option value="" disabled>Select…</option>
-          <option>Unknown</option>
           <option>Currently available</option>
           <option>Currently unavailable</option>
           <option>Commercial distribution was discontinued</option>
           <option>Not commercially available</option>
-          <option>Assay composition has changed</option>
         </select>
       </label>
+      </div>
     </fieldset>
 
     <!-- Submission details -->
@@ -300,9 +306,10 @@
 
       <!-- Matrix -->
       <label>
-        <span class="required">Add validated matrix</span>
+        <span class="required">Add validated <em>equine</em> matrix</span><span id="matrixInputHelper" style="padding-left: 10px; color: var(--pico-primary); font-style: italic; visibility: hidden;">Please add at least one validated matrix!</span>
         <fieldset role="group">
           <input type="text"
+                 id="matrixInput"
                  x-model.trim="matrixNewName"
                  list="matrixOptions"
                  placeholder="Select or type (e.g., Blood plasma)" />
@@ -403,7 +410,7 @@
       <label>
         Validation method
         <textarea x-model.trim="validation.method" rows="3"
-          placeholder="The assay was used according to manufacturer instructions (https://www.example.com/assay-instructions.pdf)."></textarea>
+          placeholder="The assay was used according to manufacturer instructions (https://www.example.com/assay-instructions.pdf). Please specify validation species if different from horse/pony."></textarea>
       </label>
     </fieldset>
 
@@ -431,7 +438,7 @@
       <legend>Confirmation</legend>
       <label>
         <input type="checkbox" x-model="agreements.openAccess" required />
-        <span class="required">I understand that all content submitted with this form will be openly accessible (email-addresses will be obfuscated)</span>
+        <span class="required">I understand that all content submitted with this form will be openly accessible (email-addresses will be encrypted)</span>
       </label>
       <label>
         <input type="checkbox" x-model="agreements.ccBy" required/>
@@ -450,6 +457,22 @@
 </main>
 
 <script>
+  async function fetchDoiData(doi) {
+    const url = `https://doi.org/${doi}`;
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/vnd.citationstyles.csl+json'
+        }
+      });
+      if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+      return await response.json();     
+    } catch (error) {
+      console.error('Failed to fetch DOI metadata:', error);
+    }
+  }
+
 function assayRegistryForm() {
   const uid = () => Math.random().toString(16).slice(2) + Date.now().toString(16);
 
@@ -467,8 +490,10 @@ function assayRegistryForm() {
       target: "",
       targetSpecies: "",
       type: "",
-      manufacturerRef: "",
       manufacturer: "",
+      platform: "",
+      descriptor: "",
+      manufacturerRef: "",
       url: "",
       availability: ""
     },
@@ -600,8 +625,10 @@ function assayRegistryForm() {
       matrixObj.metrics.splice(idx, 1);
     },
 
-    buildPayload() {
+    async buildPayload() {
       const payload = {
+        id: uid(),
+        date: new Date().toUTCString(),
         contributor: {...this.contributor },
         assay: { ...this.assay },
         submissionType: this.submission.type,
@@ -628,7 +655,10 @@ function assayRegistryForm() {
       };
 
       if (this.submission.type === "published") {
+        const doiData = await fetchDoiData(this.published.doi);
         payload.submissionDetails = {
+          authors: doiData.author,
+          title: doiData.title,
           doi: this.published.doi,
           coi: this.published.coiChoice === "none"
             ? "None"
@@ -663,8 +693,13 @@ function assayRegistryForm() {
       return payload;
     },
 
-    submit() {
-      const payload = this.buildPayload();
+    async submit() {
+      if (this.validation.matrices.length < 1) {
+        document.getElementById("matrixInputHelper").style.visibility = "visible";
+        document.getElementById("matrixInput").focus();
+        return
+      }
+      const payload = await this.buildPayload();
       this.payloadPreview = JSON.stringify(payload, null, 2);
     }
   };

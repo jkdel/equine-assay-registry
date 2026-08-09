@@ -10,6 +10,15 @@
   margin-bottom: var(--pico-spacing);
 }
 
+.ares {
+  background-color: var(--pico-muted-border-color);
+  background-color: var(--pico-form-element-background-color);
+}
+
+.ares > h3 {
+  margin: 0;
+}
+
 .required:after {
   content:"*";
   color: var(--pico-del-color);
@@ -116,20 +125,33 @@ form > fieldset > legend {
 }
 
 #mhead {
-  background-color: rgb(78.6892241379, 19.4607758621, 31.3064655172);
   width: 100%;
-  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  height: 180px;
+  max-height: 12vh;
+  background-color: rgb(78.6892241379, 19.4607758621, 31.3064655172);
+  box-shadow: 0 1px 1px 1px rgb(78.6892241379, 19.4607758621, 31.3064655172);
+  /* text-align: center;
+  padding: max(10px, 1.5vh); */
+  align-items: center;
+  display: flex;
 }
 
-main {
-  max-width: min(80%, 1980px);
-  margin:auto;
-}
+/* .logo {
+  width: 588px;
+  max-width: 90%;
+} */
 
 .logo {
-  background-image: url(../images/cvm.png);
-  background-position: center;
   height: 150px;
+  max-height: 10vh;
+  width: 588px;
+  max-width: 90%;
+  background-image: url("../images/cvm.png");
+  background-position: center;
+  background-size: contain;
+  margin: auto;
 }
 
 .banner {
@@ -140,4 +162,25 @@ main {
 
 .no-underline, .no-underline:is(:hover, :focus, :active) {
   --pico-text-decoration: none;
+}
+
+nav {
+  justify-content: center;
+  background: black;
+  line-height: 1;
+  box-shadow: 0 1px 2px 1px black;
+}
+
+nav > ul > li  > a {
+  color: white !important;
+  --pico-color: white !important;
+  --pico-underline: white !important;
+}
+
+.container {
+  margin-top: max(20px, 3vh);
+}
+
+#msearch {
+  --pico-border-radius: 0.25rem;
 }

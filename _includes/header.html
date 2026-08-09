@@ -1,0 +1,13 @@
+  <a href="https://www.vetmed.msstate.edu/nfllrc">
+    <header id="mhead">
+      <!-- <img src="../images/cvm.png" alt="" class="logo"> -->
+      <div class="logo"></div>
+    </header>
+  </a>
+  <nav>
+    <ul>
+      {% for item in site.pages %}{% unless item.url == page.url %}{% if item.title %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {% endif %}{% endunless %}{% endfor %}
+    </ul>
+  </nav>
