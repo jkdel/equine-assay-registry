@@ -15,7 +15,7 @@ title: Submit
 </head>
 
 <body>
-  {% include header.html%}
+  {% include header.html %}
 
 <main class="container" x-data="assayRegistryForm()">
   <header>
@@ -25,7 +25,7 @@ title: Submit
     </p>
   </header>
 
-  <form @submit.prevent="submit();">
+  <form>
 
     <!-- Contributor -->
     <fieldset>
@@ -56,7 +56,7 @@ title: Submit
           <input type="text" x-model.trim="contributor.affiliation" list="affiliations" placeholder="e.g., Institution, Department" required/>
         </label>
         <label>
-          ORCID iD
+          ORCiD iD
           <input type="text" x-model.trim="contributor.orcid" placeholder="e.g., 0000-0000-0000-0000" pattern="^(\d{4}-){3}\d{3}(\d|X)$"/>
         </label>
       </div>
@@ -220,7 +220,7 @@ title: Submit
                   <input type="text" x-model.trim="a.affiliation" list="affiliations" placeholder="e.g., Institution, Department" :required="original.authors.length > 1"/>
                 </label>
                 <label>
-                  ORCID iD
+                  ORCiD iD
                   <input type="text" x-model.trim="a.orcid" placeholder="e.g., 0000-0000-0000-0000" pattern="^(\d{4}-){3}\d{3}(\d|X)$"/>
                 </label>
               </div>
@@ -445,10 +445,18 @@ title: Submit
     </fieldset>
 
     <!-- Submit -->
-    <button type="submit">Submit validation data</button>
+    <div class="grid">
+      <button @click.prevent="preview();" type="submit" class="outline">Preview submission</button>
+      <button @click.prevent="submit();" type="submit">Submit validation data</button>
+    </div>
+
+    <details x-show="submissions.length > 0" style="margin-top: 1rem;" open>
+      <summary>Submission preview</summary>
+      {% include assay-cardview.html %}
+    </details>
 
     <details x-show="payloadPreview" style="margin-top: 1rem;" open>
-      <summary><strong>Payload preview</strong> <span class="muted">(what you’ll send to GitHub issues / backend)</span></summary>
+      <summary>Submission preview</summary>
       <pre class="cardish" style="overflow:auto; max-height: 420px;"><code x-text="payloadPreview"></code></pre>
     </details>
   </form>
@@ -531,6 +539,7 @@ function assayRegistryForm() {
       openAccess: false,
       ccBy: false
     },
+    submissions: [],
     payloadPreview: "",
     matrixChoices: [
       "Whole blood",
@@ -692,6 +701,18 @@ function assayRegistryForm() {
       return payload;
     },
 
+    async preview() {
+      console.log("Preview");
+      if (this.validation.matrices.length < 1) {
+        document.getElementById("matrixInputHelper").style.visibility = "visible";
+        document.getElementById("matrixInput").focus();
+        return
+      }
+      const payload = await this.buildPayload();
+      console.log(payload);
+      this.submissions.push(payload);
+    },
+
     async submit() {
       if (this.validation.matrices.length < 1) {
         document.getElementById("matrixInputHelper").style.visibility = "visible";
@@ -704,5 +725,6 @@ function assayRegistryForm() {
   };
 }
 </script>
+{% include footer.html %}
 </body>
 </html>

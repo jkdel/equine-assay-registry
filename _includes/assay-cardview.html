@@ -1,0 +1,74 @@
+      <template x-for="sub in submissions">
+        <div class="cardish ares">
+          <p class="assay-detail">
+            <span x-text="sub.assay.targetSpecies"></span>
+            <span x-text="sub.assay.target"></span>
+            (<a :href="sub.assay.url" x-text="sub.assay.manufacturerRef"></a><span x-show="sub.assay.platform"> on <span x-text="sub.assay.platform"></span></span><span x-show="sub.assay.availability">, <span :title="sub.date" x-text="sub.assay.availability" style="text-transform: lowercase;"></span></span>)
+          </p>
+
+          <template x-if="sub.submissionType === 'published'">
+            <div class="sub-detail">
+                <a :href="`https://doi.org/${sub.submissionDetails.doi}`"><h4 x-text="sub.submissionDetails.title"></h4></a>
+                <ul class="aut-list">
+                  <template x-for="aut in sub.submissionDetails.authors">
+                    <li><span :title="`ORCiD iD: ${aut.ORCID}, affiliation: ${aut.affiliation.name}`"><span x-text="aut.given"></span> <span x-text="aut.family"></span></span></li>
+                  </template>
+                </ul>
+                <p x-text="sub.submissionDetails.coi"></p>
+            </div>
+          </template>
+
+          <template x-if="sub.submissionType === 'original'">
+            <div class="sub-detail">
+              <h4>Original contribution</h4>
+                <ul class="aut-list">
+                  <template x-for="aut in sub.submissionDetails.authors">
+                    <li><span :title="`ORCiD iD: ${aut.orcid}, affiliation: ${aut.affiliation}`"><span x-text="aut.firstName"></span> <span x-text="aut.middleInitials"></span> <span x-text="aut.lastName"></span></span></li>
+                  </template>
+                </ul>
+                <p x-text="sub.submissionDetails.coi"></p>
+                <template x-if="sub.submissionDetails.ethics.notRequired">
+                  <p>The authors declare that the validation was not subject to ethical approval according to national and international regulations.</p>
+                </template>
+                <template x-if="!sub.submissionDetails.ethics.notRequired">
+                  <p>The samples used for the validation were obtained as part of a protocol approved by <span x-text="sub.submissionDetails.ethics.approvedBy" :title="`File number: ${sub.submissionDetails.ethics.fileNumber}`"></span>.</p>
+                </template>
+            </div>
+          </template>
+
+          <p>
+            <template x-for="mat in sub.validation.matrices">
+              <ul>
+                <li><span x-text="mat.outcome"></span> validation for <b><span x-text="mat.name"></span></b> in <span x-text="mat.year"></span></li>
+                <ul>
+                  <template x-for="met in mat.metrics">
+                    <li><span x-text="met.type"></span>: <span x-text="met.value"></span><span x-show="met.unit"> <span x-text="met.unit"></span></span><span x-show="met.comment">, <span x-text="met.comment"></span></span></li>
+                  </template>
+                </ul>
+              </ul>
+            </template>
+          </p>
+          <p x-text="sub.validation.method"></p>
+          <p x-text="sub.additional.aboutAssay"></p>
+          
+          <p class="contrib-detail">
+            <span>
+              Submitted by
+              <span :title="`ORCiD iD: ${sub.contributor.orcid}, affiliation: ${sub.contributor.affiliation}`">
+                <span x-text="sub.contributor.firstName"></span>
+                <span x-text="sub.contributor.middleInitials"></span>
+                <span x-text="sub.contributor.lastName"></span></span>
+              on
+              <span x-text="sub.date"></span>
+            </span>
+            <span class="detail-icons" x-show="window.location.pathname.slice(1,12) === 'detail.html'">
+              <a :href="`https://github.com/jkdel/equine-assay-registry/blob/main/_data/submissions/${sub.id}_${sub.assay.descriptor}.json`", title="Browse submission source">
+                <img src="images/source-icon.svg" alt="" class="icon">
+              </a>
+              <a :href="`https://github.com/jkdel/equine-assay-registry/commits/main/_data/submissions/${sub.id}_${sub.assay.descriptor}.json`", title="Browse submission history">
+                <img src="images/history-icon.svg" alt="" class="icon">
+              </a>
+            </span>
+          </p>
+        </div>
+      </template>

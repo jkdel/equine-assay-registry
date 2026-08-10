@@ -168,7 +168,7 @@ form > fieldset > legend {
 nav {
   justify-content: center;
   background: black;
-  line-height: 1;
+  line-height: 0.5;
   box-shadow: 0 2px 2px 1px #00000060;
 }
 
@@ -219,6 +219,8 @@ ul.aut-list li:not(:last-child)::after {
 
 .contrib-detail {
   margin-bottom: 0;
+    display: flex;
+  justify-content: space-between;
 }
 
 .sub-detail p {
@@ -227,4 +229,30 @@ ul.aut-list li:not(:last-child)::after {
 
 .sub-detail {
   margin-bottom: var(--pico-typography-spacing-vertical);
+}
+
+header {
+  padding: 0 !important;
+  min-width: 150px;
+}
+
+footer {
+  font-size: small;
+  text-align: center;
+  min-height: 50px;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.icon {
+  margin-left: 10px;
+  width: 25px;
+}
+
+.detail-icons > a {
+  text-decoration: none;
 }

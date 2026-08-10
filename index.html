@@ -21,7 +21,7 @@ title: Search
 </head>
 
 <body>
-  {% include header.html%}
+  {% include header.html %}
   <main class="container">
     
     <p>
@@ -31,7 +31,7 @@ title: Search
     </p>
     
     {% assign assays = "" | split: "" %}
-    {% for submission in site.data %}
+    {% for submission in site.data.submissions %}
       {% assign d = submission[1] %}
       {% assign assays = assays | push: d.assay.descriptor %}
     {% endfor %}
@@ -62,5 +62,6 @@ title: Search
         </template>
     </div>
   </main>
+  {% include footer.html %}
 </body>
 </html>
