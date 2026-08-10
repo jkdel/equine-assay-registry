@@ -11,7 +11,6 @@
 }
 
 .ares {
-  background-color: var(--pico-muted-border-color);
   background-color: var(--pico-form-element-background-color);
 }
 
@@ -122,6 +121,7 @@ form > fieldset > legend {
   --pico-contrast-inverse: #fff !important;
   --pico-secondary-border: #c1c6c8 !important;
   --pico-secondary-contrast: #777 !important;
+  --pico-nav-element-spacing-horizontal: 2rem !important;
 }
 
 #mhead {
@@ -130,8 +130,9 @@ form > fieldset > legend {
   z-index: 1;
   height: 180px;
   max-height: 12vh;
-  background-color: rgb(78.6892241379, 19.4607758621, 31.3064655172);
-  box-shadow: 0 1px 1px 1px rgb(78.6892241379, 19.4607758621, 31.3064655172);
+  background-color: #5d1725;
+  box-shadow: 0 2px 2px 1px #5d172560;
+  /* box-shadow: 0 1px 1px 1px rgb(78.6892241379, 19.4607758621, 31.3064655172); */
   /* text-align: center;
   padding: max(10px, 1.5vh); */
   align-items: center;
@@ -168,7 +169,7 @@ nav {
   justify-content: center;
   background: black;
   line-height: 1;
-  box-shadow: 0 1px 2px 1px black;
+  box-shadow: 0 2px 2px 1px #00000060;
 }
 
 nav > ul > li  > a {
@@ -177,10 +178,53 @@ nav > ul > li  > a {
   --pico-underline: white !important;
 }
 
+.nav-current {
+  background: #333;
+}
+
 .container {
   margin-top: max(20px, 3vh);
 }
 
 #msearch {
   --pico-border-radius: 0.25rem;
+}
+
+[title] {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--pico-color);
+  text-underline-offset: 3px;
+}
+
+.aut-list {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+ul.aut-list li {
+  list-style: none;
+  display: inline;
+}
+
+ul.aut-list li:not(:last-child)::after {
+  content: ", ";
+}
+
+.contrib-detail, .assay-detail {
+  font-size: medium;
+  color: var(--pico-blockquote-footer-color);
+}
+
+.contrib-detail {
+  margin-bottom: 0;
+}
+
+.sub-detail p {
+  margin: 0;
+}
+
+.sub-detail {
+  margin-bottom: var(--pico-typography-spacing-vertical);
 }

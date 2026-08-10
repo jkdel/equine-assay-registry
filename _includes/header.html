@@ -6,8 +6,8 @@
   </a>
   <nav>
     <ul>
-      {% for item in site.pages %}{% unless item.url == page.url %}{% if item.title %}
-      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-      {% endif %}{% endunless %}{% endfor %}
+      {% for item in site.pages %}{% if item.title %}
+      <li {% if item.url == page.url %}class="nav-current"{% endif %}><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {% endif %}{% endfor %}
     </ul>
   </nav>

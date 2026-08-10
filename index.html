@@ -42,17 +42,14 @@ title: Search
           assays: [
             {% for assay in assays %}{descriptor: '{{assay}}'}, {% endfor %}
           ],
-          // 2. Define a getter function to return the filtered list dynamically
           get assay_filter() {
             if(this.search) {
               return this.assays.filter(assay => {
                 return assay.descriptor.toLowerCase().includes(this.search.toLowerCase());
               });
             } else {
-              return false;
-            }
-                        }
-                      }">
+              return this.assays
+            }}}">
     
       <h2>Start searching for an assay</h2>
       <input type="search" id="msearch" x-model="search" placeholder="Target, method, manufacturer…">

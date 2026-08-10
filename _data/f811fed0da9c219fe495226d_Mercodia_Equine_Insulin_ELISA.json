@@ -1,0 +1,130 @@
+{
+  "id": "f811fed0da9c219fe495226d",
+  "date": "Sun, 09 Aug 2026 03:33:26 GMT",
+  "contributor": {
+    "id": "c2596b0ff9f8c19fe47e5035",
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "julien.delarocque@msstate.edu",
+    "affiliation": "Mississippi State University",
+    "orcid": ""
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Mercodia",
+    "platform": "",
+    "descriptor": "Mercodia Equine Insulin ELISA",
+    "manufacturerRef": "10-1205-01",
+    "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
+    "availability": "Currently available"
+  },
+  "submissionType": "published",
+  "submissionDetails": {
+    "authors": [
+      {
+        "given": "Josefine",
+        "family": "Öberg",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Johan",
+        "family": "Bröjer",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Owe",
+        "family": "Wattle",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "Inger",
+        "family": "Lilliehöök",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "title": "Evaluation of an equine-optimized enzyme-linked immunosorbent assay for serum insulin measurement and stability study of equine serum insulin",
+    "doi": "10.1007/s00580-011-1284-6",
+    "coi": "The authors have no conflicts of interests to disclose."
+  },
+  "validation": {
+    "matrices": [
+      {
+        "id": "fd8472560df32819fe4940578",
+        "name": "Blood serum",
+        "notes": "",
+        "metrics": [
+          {
+            "id": "40041a3d5d10919fe4947b8d",
+            "type": "Intra-assay CV",
+            "value": "≤ 6.7",
+            "unit": "%",
+            "comment": ""
+          },
+          {
+            "id": "97f45d6d8420719fe494b456",
+            "type": "Inter-assay CV",
+            "value": "10.7",
+            "unit": "%",
+            "comment": ""
+          },
+          {
+            "id": "",
+            "type": "Linear regression coefficient of determination (goodness-of-fit)",
+            "value": "0.97",
+            "unit": "R²",
+            "comment": "Against human insulin Coat-A-Count RIA, Siemens Medical Solutions"
+          },
+          {
+            "id": "",
+            "type": "Recovery",
+            "value": "90",
+            "unit": "%",
+            "comment": "Averaged over two series"
+          }
+        ],
+        "year": "2011",
+        "outcome": "Successful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions available at https://www.mercodia.com/products/equine-insulin-elisa/."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "agreements": {
+    "openAccess": true,
+    "ccBy": true
+  }
+}

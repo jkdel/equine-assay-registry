@@ -144,7 +144,6 @@ title: Submit
       <section x-show="submission.type === 'published'" x-transition class="cardish">
         <h3>Published validation data</h3>
         <label>
-          <!-- TODO: Add fetching of DOI data -->
           <span class="required">Publication DOI</span>
           <input type="text" x-model.trim="published.doi" placeholder="10.0000/000000" pattern="10.\d{4,9}\/[\-\._;\(\)\/\:a-zA-Z0-9]+" :required="submission.type === 'published'"/>
         </label>
@@ -388,7 +387,6 @@ title: Submit
               </template>
             </div>
 
-          <!-- TODO: Add info about criteria -->
             <div class="grid">
               <label>
                 <span class="required">Year of validation</span>
@@ -457,6 +455,8 @@ title: Submit
 </main>
 
 <script>
+  // This code was written with support from Copilot between 2026-06 and 2026-08
+
   async function fetchDoiData(doi) {
     const url = `https://doi.org/${doi}`;
     try {
@@ -589,7 +589,6 @@ function assayRegistryForm() {
       this.validation.matrices.push({
         id: uid(),
         name,
-        notes: "",
         metricNewType: "",
         metrics: []
       });
@@ -629,15 +628,14 @@ function assayRegistryForm() {
       const payload = {
         id: uid(),
         date: new Date().toUTCString(),
-        contributor: {...this.contributor },
-        assay: { ...this.assay },
+        contributor: this.contributor,
+        assay: this.assay,
         submissionType: this.submission.type,
         submissionDetails: {},
         validation: {
           matrices: this.validation.matrices.map(mx => ({
             id: mx.id,
             name: mx.name,
-            notes: mx.notes,
             metrics: mx.metrics.map(met => ({
               id: met.id,
               type: met.type,
@@ -650,8 +648,8 @@ function assayRegistryForm() {
           })),
           method: this.validation.method
         },
-        additional: { ...this.additional },
-        agreements: { ...this.agreements }
+        additional: this.additional,
+        agreements: this.agreements
       };
 
       if (this.submission.type === "published") {
@@ -661,15 +659,20 @@ function assayRegistryForm() {
           title: doiData.title,
           doi: this.published.doi,
           coi: this.published.coiChoice === "none"
-            ? "None"
+            ? "The authors have no conflicts of interests to disclose."
             : (this.published.coiText || "").trim()
         };
       }
 
       if (this.submission.type === "original") {
+        const ao = Array.from(document.getElementById("authorlist").querySelectorAll("[data-uid]")).map(el => el.dataset.uid);
         payload.submissionDetails = {
-          isAuthor: this.original.isAuthor,
-          authorized: this.original.authorized,
+          ethics: this.original.ethicsChoice === "approved"
+            ? { approvedBy: this.original.ethicsApprovedBy, fileNumber: this.original.ethicsFileNumber }
+            : { notRequired: true },
+          coi: this.original.coiChoice === "none"
+            ? "The authors have no conflicts of interests to disclose."
+            : (this.original.coiText || "").trim(),
           authors: this.original.authors.map(a => ({
             id: a.id,
             firstName: a.firstName,
@@ -678,18 +681,14 @@ function assayRegistryForm() {
             email: a.email,
             affiliation: a.affiliation,
             orcid: a.orcid
-          })),
-          authorOrder: Array.from(document.getElementById("authorlist").querySelectorAll("[data-uid]")).map(el => el.dataset.uid),
-          validAuthorOrder: this.original.validAuthorOrder,
-          ethics: this.original.ethicsChoice === "approved"
-            ? { approvedBy: this.original.ethicsApprovedBy, fileNumber: this.original.ethicsFileNumber }
-            : { notRequired: true },
-          coi: this.original.coiChoice === "none"
-            ? "None"
-            : (this.original.coiText || "").trim()
+          }))
+          .concat(this.contributor)
+          .sort((a, b) => {
+            return ao.indexOf(a.id) - ao.indexOf(b.id)
+          })
+          .filter(aut => aut.firstName != '')
         };
       }
-
       return payload;
     },
 
