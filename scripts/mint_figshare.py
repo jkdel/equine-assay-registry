@@ -59,8 +59,7 @@ def main():
     article_url = create_article({
         "title": f"Data for PR: {PR_TITLE}",
         "description": "Automated data upload from GitHub repository via GitHub Actions.",
-        "defined_type": "dataset",
-        "categories": [300907] # Veterinary medicine
+        "defined_type": "dataset"
     })
     print("Uploading files...")
     for sf in [target_json_path] + supporting_files:
