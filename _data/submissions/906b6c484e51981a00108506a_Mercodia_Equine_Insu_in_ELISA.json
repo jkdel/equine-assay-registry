@@ -1,25 +1,25 @@
 {
-  "id": "906b6c484e51981a00108506a_Mercodia_Equine_Insu_in_ELISA",
+  "id": "906b6c484e51981a00108506a_Mercodia_Equine_Insulin_ELISA",
   "date": "Fri, 14 Aug 2026 16:08:37 GMT",
   "contributor": {
     "id": "8ea03f29a901f81a001011996",
     "firstName": "Julien",
     "middleInitials": "",
-    "lastName": "Dearocque",
+    "lastName": "Delarocque",
     "email": "julien.delarocque@msstate.edu",
     "affiliation": "Mississippi State University",
     "orcid": "0000-0002-4598-3499"
   },
   "assay": {
-    "target": "Insuin",
+    "target": "Insulin",
     "targetSpecies": "Equine",
     "type": "ELISA",
     "manufacturer": "Mercodia",
     "platform": "",
-    "manufacturerRef": "10120501",
-    "url": "https://www.mercodia.com/products/equine-insuin-eisa/",
+    "manufacturerRef": "10-1205-01",
+    "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
     "availability": "Currently available",
-    "descriptor": "Mercodia Equine Insuin ELISA"
+    "descriptor": "Mercodia Equine Insulin ELISA"
   },
   "submissionType": "original",
   "submissionDetails": {
@@ -33,7 +33,7 @@
         "id": "8ea03f29a901f81a001011996",
         "firstName": "Julien",
         "middleInitials": "",
-        "lastName": "Dearocque",
+        "lastName": "Delarocque",
         "email": "julien.delarocque@msstate.edu",
         "affiliation": "Mississippi State University",
         "orcid": "0000-0002-4598-3499"
@@ -55,15 +55,15 @@
         "name": "Blood plasma",
         "metrics": [
           {
-            "type": "Pearson correation coefficient with bood serum",
+            "type": "Pearson correlation coefficient with blood serum",
             "value": "0.986",
             "unit": "",
             "comment": "n = 111"
           },
           {
-            "type": "Robust regression pasma to serum",
+            "type": "Robust regression plasma to serum",
             "value": "",
-            "unit": "Serum = 1.014 x Pasma + 0.254",
+            "unit": "Serum = 1.014 x Plasma + 0.254",
             "comment": "n = 111"
           }
         ],
