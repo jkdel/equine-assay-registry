@@ -1,0 +1,82 @@
+{
+  "id": "99b6d246d90191a0009f452d_Mercodia_Equine_Insulin_ELISA",
+  "date": "Fri, 14 Aug 2026 14:13:53 GMT",
+  "contributor": {
+    "id": "aa907d6db231981a000836d38",
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "julien.delarocque@msstate.edu",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-4598-3499"
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Mercodia",
+    "platform": "",
+    "manufacturerRef": "10-1205-01",
+    "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
+    "availability": "Currently available",
+    "descriptor": "Mercodia Equine Insulin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "notRequired": true
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "id": "aa907d6db231981a000836d38",
+        "firstName": "Julien",
+        "middleInitials": "",
+        "lastName": "Delarocque",
+        "email": "julien.delarocque@msstate.edu",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-4598-3499"
+      },
+      {
+        "id": "55f2a432047341a000836d38",
+        "firstName": "Tobias",
+        "middleInitials": "",
+        "lastName": "Warnken",
+        "email": "",
+        "affiliation": "University of Veterinary Medicine Hannover",
+        "orcid": "0000-0002-0741-4674"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood plasma",
+        "metrics": [
+          {
+            "type": "Pearson correlation coefficient with blood serum",
+            "value": "0.986",
+            "unit": "",
+            "comment": "n = 111"
+          },
+          {
+            "type": "Robust regression plasma to serum",
+            "value": "",
+            "unit": "Serum = 1.014 x Plasma + 0.254",
+            "comment": "n = 111"
+          }
+        ],
+        "year": "2020",
+        "outcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "mercodia_plasma_serum.xlsx"
+  ]
+}
