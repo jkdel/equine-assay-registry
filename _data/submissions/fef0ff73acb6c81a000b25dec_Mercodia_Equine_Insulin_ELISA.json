@@ -1,0 +1,60 @@
+{
+  "id": "fef0ff73acb6c81a000b25dec_Mercodia_Equine_Insulin_ELISA",
+  "date": "Fri, 14 Aug 2026 14:34:44 GMT",
+  "contributor": {
+    "id": "703a9fe7f517f1a000b13058",
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "julien.delarocque@msstate.edu",
+    "affiliation": "Mississippi State University",
+    "orcid": ""
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Mercodia",
+    "platform": "",
+    "manufacturerRef": "10-1205-01",
+    "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
+    "availability": "",
+    "descriptor": "Mercodia Equine Insulin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "notRequired": true
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "id": "703a9fe7f517f1a000b13058",
+        "firstName": "Julien",
+        "middleInitials": "",
+        "lastName": "Delarocque",
+        "email": "julien.delarocque@msstate.edu",
+        "affiliation": "Mississippi State University",
+        "orcid": ""
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood plasma",
+        "metrics": [],
+        "year": "2020",
+        "outcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "mercodia_plasma_serum.xlsx"
+  ]
+}
