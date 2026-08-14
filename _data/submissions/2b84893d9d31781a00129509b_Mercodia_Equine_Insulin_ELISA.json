@@ -55,15 +55,15 @@
         "name": "Blood plasma",
         "metrics": [
           {
-            "type": "Pearson correation coefficient with bood serum",
+            "type": "Pearson correlation coefficient with blood serum",
             "value": "0.986",
             "unit": "",
             "comment": "n = 111"
           },
           {
-            "type": "Robust regression pasma to serum",
+            "type": "Robust regression plasma to serum",
             "value": "",
-            "unit": "Serum = 1.014 x Pasma + 0.254",
+            "unit": "Serum = 1.014 x Plasma + 0.254",
             "comment": "n = 111"
           }
         ],
