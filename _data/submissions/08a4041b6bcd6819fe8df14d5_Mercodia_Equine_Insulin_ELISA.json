@@ -1,8 +1,8 @@
 {
-  "id": "906b6c484e51981a00108506a_Mercodia_Equine_Insulin_ELISA",
-  "date": "Fri, 14 Aug 2026 16:08:37 GMT",
+  "id": "08a4041b6bcd6819fe8df14d5_Mercodia_Equine_Insulin_ELISA",
+  "date": "Sun, 09 Aug 2026 23:32:41 GMT",
   "contributor": {
-    "id": "8ea03f29a901f81a001011996",
+    "id": "2549af483a60519fe828908f",
     "firstName": "Julien",
     "middleInitials": "",
     "lastName": "Delarocque",
@@ -16,21 +16,21 @@
     "type": "ELISA",
     "manufacturer": "Mercodia",
     "platform": "",
+    "descriptor": "Mercodia Equine Insulin ELISA",
     "manufacturerRef": "10-1205-01",
     "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
-    "availability": "Currently available",
-    "descriptor": "Mercodia Equine Insulin ELISA"
+    "availability": "Currently available"
   },
   "submissionType": "original",
   "submissionDetails": {
     "ethics": {
-      "approvedBy": "Niedersächsisches Landesamt für Verbraucherschutz und Lebensmittelsicherheit (LAVES)",
-      "fileNumber": "17/2646"
+      "approvedBy": "State Office for Consumer Protection and Food Safety (LAVES)",
+      "fileNumber": "33.8–42502–04-17/2646"
     },
     "coi": "The authors have no conflicts of interests to disclose.",
     "authors": [
       {
-        "id": "8ea03f29a901f81a001011996",
+        "id": "2549af483a60519fe828908f",
         "firstName": "Julien",
         "middleInitials": "",
         "lastName": "Delarocque",
@@ -39,12 +39,12 @@
         "orcid": "0000-0002-4598-3499"
       },
       {
-        "id": "59d8a7dd3f8d681a001011996",
+        "id": "b461b77014a23819fe828908f",
         "firstName": "Tobias",
         "middleInitials": "",
         "lastName": "Warnken",
         "email": "",
-        "affiliation": "University of Veterinary Medicine Hannover",
+        "affiliation": "Clinic for Horses, University of Veterinary Medicine Hannover",
         "orcid": "0000-0002-0741-4674"
       }
     ]
@@ -52,19 +52,22 @@
   "validation": {
     "matrices": [
       {
+        "id": "612beeafce6d4819fe8da11c8",
         "name": "Blood plasma",
         "metrics": [
           {
+            "id": "77d15227c53d219fe8dad1b8",
             "type": "Pearson correlation coefficient with blood serum",
-            "value": "0.986",
+            "value": "0.97",
             "unit": "",
-            "comment": "n = 111"
+            "comment": ""
           },
           {
+            "id": "9bd0771cb23d719fe8dd9c4b",
             "type": "Robust regression plasma to serum",
             "value": "",
-            "unit": "Serum = 1.014 x Plasma + 0.254",
-            "comment": "n = 111"
+            "unit": "Serum = 1.02 x Plasma + 0.02",
+            "comment": "(n = 98)"
           }
         ],
         "year": "2020",
@@ -74,10 +77,8 @@
     "method": ""
   },
   "additional": {
-    "aboutAssay": "",
+    "aboutAssay": "Not tested in lipemic samples.",
     "forReview": ""
   },
-  "addFiles": [
-    "mercodia_plasma_serum.xlsx"
-  ]
+  "addFiles": []
 }
