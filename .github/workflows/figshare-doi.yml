@@ -1,0 +1,56 @@
+name: Mint Figshare DOI
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  mint-and-update-doi:
+    # Only run if the PR was merged AND has the 'doi' label
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'doi')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
+          echo "FILES=$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "Changed files: $CHANGED_FILES"
+
+      - name: Run Figshare Minting Script
+        env:
+          FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.FILES }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: python scripts/mint_figshare.py
+
+      - name: Commit and push updated JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Add Figshare DOI to dataset JSON [skip ci]"
+            git push
+          fi
