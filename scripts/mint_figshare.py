@@ -51,7 +51,7 @@ def publish_article(article_url):
     return resp.json().get("doi")
 
 def main():
-    changed_files = [f.strip() for f in CHANGED_FILES.split('\n') if f.strip()]
+    changed_files = [f.strip() for f in CHANGED_FILES.split(' ') if f.strip()]
     existing_files = [f for f in changed_files if os.path.exists(f)]
     target_json = [f for f in existing_files if f.endswith('.json')][0]
     supporting_files = [f for f in existing_files if f != target_json]
