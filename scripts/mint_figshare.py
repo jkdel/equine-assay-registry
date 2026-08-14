@@ -62,7 +62,7 @@ def main():
         "defined_type": "dataset"
     })
     print("Uploading files...")
-    for sf in [target_json_path] + supporting_files:
+    for sf in [target_json] + supporting_files:
         upload_file(article_url, sf)
     print("Publishing article...")
     doi = publish_article(article_url)
