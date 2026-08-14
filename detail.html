@@ -50,7 +50,7 @@
             init() {
               const urlParams = new URLSearchParams(window.location.search);
               this.descriptor = urlParams.get("descriptor") || "";
-              this.subs = this.submissions.filter(s => s.includes(this.descriptor.replace(/ /g,"_"))).map(s => `./_data/submissions/${s}.json`);
+              this.subs = this.submissions.filter(s => s.includes(this.descriptor.replace(/[^a-z0-9.\-_]/gi, "_"))).map(s => `./_data/submissions/${s}.json`);
               this.submissions = loadJsonFiles(this.subs);
             }
    }'>

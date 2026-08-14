@@ -50,6 +50,15 @@
           </p>
           <p x-text="sub.validation.method"></p>
           <p x-text="sub.additional.aboutAssay"></p>
+          <template x-if="sub.addFiles.length > 0">
+            <ul class="aut-list">
+              <p>Additional files:
+                <template x-for="file in sub.addFiles">
+                  <li><a :href="`/_data/supplementary/${sub.id}/${file}`" x-text="file"></a></li>
+                </template>
+              </p>
+            </ul>
+          </template>
           
           <p class="contrib-detail">
             <span>
@@ -62,10 +71,10 @@
               <span x-text="sub.date"></span>
             </span>
             <span class="detail-icons" x-show="window.location.pathname.slice(1,12) === 'detail.html'">
-              <a :href="`https://github.com/jkdel/equine-assay-registry/blob/main/_data/submissions/${sub.id}_${sub.assay.descriptor}.json`", title="Browse submission source">
+              <a :href="`https://github.com/jkdel/equine-assay-registry/blob/main/_data/submissions/${sub.id}.json`", title="Browse submission source">
                 <img src="images/source-icon.svg" alt="" class="icon">
               </a>
-              <a :href="`https://github.com/jkdel/equine-assay-registry/commits/main/_data/submissions/${sub.id}_${sub.assay.descriptor}.json`", title="Browse submission history">
+              <a :href="`https://github.com/jkdel/equine-assay-registry/commits/main/_data/submissions/${sub.id}.json`", title="Browse submission history">
                 <img src="images/history-icon.svg" alt="" class="icon">
               </a>
             </span>

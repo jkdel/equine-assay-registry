@@ -1,5 +1,5 @@
 {
-  "id": "08a4041b6bcd6819fe8df14d5",
+  "id": "08a4041b6bcd6819fe8df14d5_Mercodia_Equine_Insulin_ELISA",
   "date": "Sun, 09 Aug 2026 23:32:41 GMT",
   "contributor": {
     "id": "2549af483a60519fe828908f",
@@ -80,8 +80,5 @@
     "aboutAssay": "Not tested in lipemic samples.",
     "forReview": ""
   },
-  "agreements": {
-    "openAccess": true,
-    "ccBy": true
-  }
+  "addFiles": []
 }

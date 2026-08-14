@@ -25,7 +25,7 @@ title: Submit
     </p>
   </header>
 
-  <form>
+  <form @submit.prevent="submit();">
 
     <!-- Contributor -->
     <fieldset>
@@ -100,8 +100,8 @@ title: Submit
           <input type="text" x-model.trim="assay.platform" placeholder="e.g., IMMULITE 2000 XPi"/>
         </label>
         <label>
-          <span>Suggested descriptor</span>
-          <input type="text" x-model.trim="assay.descriptor" placeholder="e.g., [Manufacturer] [Species] [Target] [Type]"/>
+          <span>Descriptor</span>
+          <input type="text" x-model="assayDesc" disabled/>
         </label>
       </div>
 
@@ -112,7 +112,7 @@ title: Submit
         </label>
         <label>
           <span class="required">Vendor/manufacturer URL</span>
-          <input type="url" x-model.trim="assay.url" placeholder="https://…" required/>
+          <input type="url" x-model.trim="assay.url" required/>
         </label>
       <label>
         <span>Assay availability</span>
@@ -152,7 +152,7 @@ title: Submit
           <fieldset>
             <label>
               <input type="radio" name="publishedCoi" value="none" x-model="published.coiChoice" :required="submission.type === 'published'"/>
-              I have no conflicts of interest to disclose
+              The authors of the original publication declared no competing interests. The contributor has no competing interests to disclose.
             </label>
             <label>
               <input type="radio" name="publishedCoi" value="disclose" x-model="published.coiChoice"/>
@@ -427,7 +427,7 @@ title: Submit
       </label>
       <label>
         Additional files
-        <input type="file" style="margin-bottom: 0;" multiple disabled/>
+        <input id="addFiles" type="file" style="margin-bottom: 0;" multiple/>
       </label>
     </fieldset>
 
@@ -447,7 +447,7 @@ title: Submit
     <!-- Submit -->
     <div class="grid">
       <button @click.prevent="preview();" type="submit" class="outline">Preview submission</button>
-      <button @click.prevent="submit();" type="submit">Submit validation data</button>
+      <button type="submit">Submit validation data</button>
     </div>
 
     <details x-show="submissions.length > 0" style="margin-top: 1rem;" open>
@@ -464,7 +464,6 @@ title: Submit
 
 <script>
   // This code was written with support from Copilot between 2026-06 and 2026-08
-
   async function fetchDoiData(doi) {
     const url = `https://doi.org/${doi}`;
     try {
@@ -481,249 +480,265 @@ title: Submit
     }
   }
 
-function assayRegistryForm() {
   const uid = () => Math.random().toString(16).slice(2) + Date.now().toString(16);
-
-  return {
-    contributor: {
-      id: uid(),
-      firstName: "",
-      middleInitials: "",
-      lastName: "",
-      email: "",
-      affiliation: "",
-      orcid: ""
-    },
-    assay: {
-      target: "",
-      targetSpecies: "",
-      type: "",
-      manufacturer: "",
-      platform: "",
-      descriptor: "",
-      manufacturerRef: "",
-      url: "",
-      availability: ""
-    },
-    submission: {
-      type: ""
-    },
-    published: {
-      doi: "",
-      coiChoice: "none",
-      coiText: ""
-    },
-    original: {
-      isAuthor: false,
-      authorized: false,
-      authors: [
-        { id: uid(), firstName: "", middleInitials: "", lastName: "", email: "", affiliation: "", orcid: "" }
-      ],
-      authorOrder: [],
-      validAuthorOrder: "",
-      ethicsChoice: "notRequired",
-      ethicsApprovedBy: "",
-      ethicsFileNumber: "",
-      coiChoice: "none",
-      coiText: ""
-    },
-    validation: {
-      matrices: [],
-      method: ""
-    },
-    additional: {
-      aboutAssay: "",
-      forReview: ""
-    },
-    agreements: {
-      openAccess: false,
-      ccBy: false
-    },
-    submissions: [],
-    payloadPreview: "",
-    matrixChoices: [
-      "Whole blood",
-      "Blood plasma",
-      "Blood serum",
-      "Urine",
-      "Saliva",
-      "Tissue lysate",
-      "Synovial fluid",
-      "CSF"
-    ],
-    metricChoices: [
-      "Intra-assay CV",
-      "Inter-assay CV",
-      "Recovery",
-      "Dilutional linearity (R²)",
-      "Sensitivity",
-      "Cross-reactivity",
-      "Mean difference",
-      "Upper limit of agreement",
-      "Lower limit of agreement"
-    ],
-    matrixNewName: "",
-    get affiliationsList() {
-      const raw = [
-        this.contributor.affiliation,
-        ...this.original.authors.map(a => a.affiliation)
-      ].map(v => (v || "").trim()).filter(Boolean);
-      return Array.from(new Set(raw)).sort((a, b) => a.localeCompare(b));
-    },
-
-    addAuthor() {
-      this.original.authors.push({
+  function assayRegistryForm() {
+    return {
+      contributor: {
         id: uid(),
         firstName: "",
         middleInitials: "",
         lastName: "",
         email: "",
-        affiliation: ""
-      });
-    },
+        affiliation: "",
+        orcid: ""
+      },
+      assay: {
+        target: "",
+        targetSpecies: "",
+        type: "",
+        manufacturer: "",
+        platform: "",
+        manufacturerRef: "",
+        url: "https://",
+        availability: ""
+      },
+      submission: {
+        type: ""
+      },
+      published: {
+        doi: "",
+        coiChoice: "none",
+        coiText: ""
+      },
+      original: {
+        isAuthor: false,
+        authorized: false,
+        authors: [
+          { id: uid(), firstName: "", middleInitials: "", lastName: "", email: "", affiliation: "", orcid: "" }
+        ],
+        authorOrder: [],
+        validAuthorOrder: "",
+        ethicsChoice: "notRequired",
+        ethicsApprovedBy: "",
+        ethicsFileNumber: "",
+        coiChoice: "none",
+        coiText: ""
+      },
+      validation: {
+        matrices: [],
+        method: ""
+      },
+      additional: {
+        aboutAssay: "",
+        forReview: ""
+      },
+      agreements: {
+        openAccess: false,
+        ccBy: false
+      },
+      submissions: [],
+      payloadPreview: "",
+      matrixChoices: [
+        "Whole blood",
+        "Blood plasma",
+        "Blood serum",
+        "Urine",
+        "Saliva",
+        "Tissue lysate",
+        "Synovial fluid",
+        "CSF"
+      ],
+      metricChoices: [
+        "Intra-assay CV",
+        "Inter-assay CV",
+        "Recovery",
+        "Dilutional linearity (R²)",
+        "Sensitivity",
+        "Cross-reactivity",
+        "Mean difference",
+        "Upper limit of agreement",
+        "Lower limit of agreement"
+      ],
+      get assayDesc() {
+        return [this.assay.manufacturer, this.assay.platform, this.assay.targetSpecies, this.assay.target, this.assay.type]
+        .filter(Boolean)
+        .join(' ')
+      },
+      matrixNewName: "",
+      get affiliationsList() {
+        const raw = [
+          this.contributor.affiliation,
+          ...this.original.authors.map(a => a.affiliation)
+        ].map(v => (v || "").trim()).filter(Boolean);
+        return Array.from(new Set(raw)).sort((a, b) => a.localeCompare(b));
+      },
 
-    removeAuthor(idx) {
-      if (this.original.authors.length <= 1) return;
-      this.original.authors.splice(idx, 1);
-    },
+      addAuthor() {
+        this.original.authors.push({
+          id: uid(),
+          firstName: "",
+          middleInitials: "",
+          lastName: "",
+          email: "",
+          affiliation: ""
+        });
+      },
 
-    addMatrix() {
-      const name = (this.matrixNewName || "").trim();
-      if (!name) return;
-      const exists = this.validation.matrices.some(m => m.name.toLowerCase() === name.toLowerCase());
-      if (exists) {
+      removeAuthor(idx) {
+        if (this.original.authors.length <= 1) return;
+        this.original.authors.splice(idx, 1);
+      },
+
+      addMatrix() {
+        const name = (this.matrixNewName || "").trim();
+        if (!name) return;
+        const exists = this.validation.matrices.some(m => m.name.toLowerCase() === name.toLowerCase());
+        if (exists) {
+          this.matrixNewName = "";
+          return;
+        }
+        this.validation.matrices.push({
+          id: uid(),
+          name,
+          metricNewType: "",
+          metrics: []
+        });
         this.matrixNewName = "";
-        return;
-      }
-      this.validation.matrices.push({
-        id: uid(),
-        name,
-        metricNewType: "",
-        metrics: []
-      });
-      this.matrixNewName = "";
-    },
+      },
 
-    validDate() {
-      const validDates = document.getElementsByClassName('valid-dates');
-      const currentYear = new Date().getFullYear();
-      for (let i = 0; i < validDates.length; i++) {
-        validDates[i].max = currentYear;
-      }
-    },
+      validDate() {
+        const validDates = document.getElementsByClassName('valid-dates');
+        const currentYear = new Date().getFullYear();
+        for (let i = 0; i < validDates.length; i++) {
+          validDates[i].max = currentYear;
+        }
+      },
 
-    removeMatrix(idx) {
-      this.validation.matrices.splice(idx, 1);
-    },
+      removeMatrix(idx) {
+        this.validation.matrices.splice(idx, 1);
+      },
 
-    addMetric(matrixObj) {
-      const type = (matrixObj.metricNewType || "").trim();
-      if (!type) return;
-      matrixObj.metrics.push({
-        id: uid(),
-        type,
-        value: "",
-        unit: "",
-        comment: ""
-      });
-      matrixObj.metricNewType = "";
-    },
+      addMetric(matrixObj) {
+        const type = (matrixObj.metricNewType || "").trim();
+        if (!type) return;
+        matrixObj.metrics.push({
+          id: uid(),
+          type,
+          value: "",
+          unit: "",
+          comment: ""
+        });
+        matrixObj.metricNewType = "";
+      },
 
-    removeMetric(matrixObj, idx) {
-      matrixObj.metrics.splice(idx, 1);
-    },
+      removeMetric(matrixObj, idx) {
+        matrixObj.metrics.splice(idx, 1);
+      },
 
-    async buildPayload() {
-      const payload = {
-        id: uid(),
-        date: new Date().toUTCString(),
-        contributor: this.contributor,
-        assay: this.assay,
-        submissionType: this.submission.type,
-        submissionDetails: {},
-        validation: {
-          matrices: this.validation.matrices.map(mx => ({
-            id: mx.id,
-            name: mx.name,
-            metrics: mx.metrics.map(met => ({
-              id: met.id,
-              type: met.type,
-              value: met.value,
-              unit: met.unit,
-              comment: met.comment
+      async buildPayload() {
+        this.assay.descriptor = this.assayDesc;
+        const payload = {
+          id: `${uid()}_${this.assayDesc.replace(/[^a-z0-9.\-_]/gi, '_')}`,
+          date: new Date().toUTCString(),
+          contributor: this.contributor,
+          assay: this.assay,
+          submissionType: this.submission.type,
+          submissionDetails: {},
+          validation: {
+            matrices: this.validation.matrices.map(mx => ({
+              name: mx.name,
+              metrics: mx.metrics.map(met => ({
+                type: met.type,
+                value: met.value,
+                unit: met.unit,
+                comment: met.comment
+              })),
+              year: mx.year,
+              outcome: mx.validationOutcome
             })),
-            year: mx.year,
-            outcome: mx.validationOutcome
-          })),
-          method: this.validation.method
-        },
-        additional: this.additional,
-        agreements: this.agreements
-      };
-
-      if (this.submission.type === "published") {
-        const doiData = await fetchDoiData(this.published.doi);
-        payload.submissionDetails = {
-          authors: doiData.author,
-          title: doiData.title,
-          doi: this.published.doi,
-          coi: this.published.coiChoice === "none"
-            ? "The authors have no conflicts of interests to disclose."
-            : (this.published.coiText || "").trim()
+            method: this.validation.method
+          },
+          additional: this.additional,
+          addFiles: [...document.getElementById('addFiles').files].map(a => a.name.replace(/[^a-z0-9.\-_]/gi, '_'))
         };
-      }
 
-      if (this.submission.type === "original") {
-        const ao = Array.from(document.getElementById("authorlist").querySelectorAll("[data-uid]")).map(el => el.dataset.uid);
-        payload.submissionDetails = {
-          ethics: this.original.ethicsChoice === "approved"
-            ? { approvedBy: this.original.ethicsApprovedBy, fileNumber: this.original.ethicsFileNumber }
-            : { notRequired: true },
-          coi: this.original.coiChoice === "none"
-            ? "The authors have no conflicts of interests to disclose."
-            : (this.original.coiText || "").trim(),
-          authors: this.original.authors.map(a => ({
-            id: a.id,
-            firstName: a.firstName,
-            middleInitials: a.middleInitials,
-            lastName: a.lastName,
-            email: a.email,
-            affiliation: a.affiliation,
-            orcid: a.orcid
-          }))
-          .concat(this.contributor)
-          .sort((a, b) => {
-            return ao.indexOf(a.id) - ao.indexOf(b.id)
-          })
-          .filter(aut => aut.firstName != '')
-        };
-      }
-      return payload;
-    },
+        if (this.submission.type === "published") {
+          const doiData = await fetchDoiData(this.published.doi);
+          payload.submissionDetails = {
+            authors: doiData.author,
+            title: doiData.title,
+            doi: this.published.doi,
+            coi: this.published.coiChoice === "none"
+              ? "The authors and the contributor have no conflicts of interests to disclose."
+              : (this.published.coiText || "").trim()
+          };
+        }
 
-    async preview() {
-      console.log("Preview");
-      if (this.validation.matrices.length < 1) {
-        document.getElementById("matrixInputHelper").style.visibility = "visible";
-        document.getElementById("matrixInput").focus();
-        return
-      }
-      const payload = await this.buildPayload();
-      console.log(payload);
-      this.submissions.push(payload);
-    },
+        if (this.submission.type === "original") {
+          const ao = Array.from(document.getElementById("authorlist").querySelectorAll("[data-uid]")).map(el => el.dataset.uid);
+          payload.submissionDetails = {
+            ethics: this.original.ethicsChoice === "approved"
+              ? { approvedBy: this.original.ethicsApprovedBy, fileNumber: this.original.ethicsFileNumber }
+              : { notRequired: true },
+            coi: this.original.coiChoice === "none"
+              ? "The authors have no conflicts of interests to disclose."
+              : (this.original.coiText || "").trim(),
+            authors: this.original.authors.map(a => ({
+              id: a.id,
+              firstName: a.firstName,
+              middleInitials: a.middleInitials,
+              lastName: a.lastName,
+              email: a.email,
+              affiliation: a.affiliation,
+              orcid: a.orcid
+            }))
+            .concat(this.contributor)
+            .sort((a, b) => {
+              return ao.indexOf(a.id) - ao.indexOf(b.id) // sort according to author order (ao)
+            })
+            .filter(aut => aut.firstName != '')
+          };
+        }
+        return payload;
+      },
 
-    async submit() {
-      if (this.validation.matrices.length < 1) {
-        document.getElementById("matrixInputHelper").style.visibility = "visible";
-        document.getElementById("matrixInput").focus();
-        return
+      async preview() {
+        if (this.validation.matrices.length < 1) {
+          document.getElementById("matrixInputHelper").style.visibility = "visible";
+          document.getElementById("matrixInput").focus();
+          return
+        }
+        const payload = await this.buildPayload();
+        this.submissions = [payload];
+      },
+
+      async submit() {
+        if (this.validation.matrices.length < 1) {
+          document.getElementById("matrixInputHelper").style.visibility = "visible";
+          document.getElementById("matrixInput").focus();
+          return
+        }
+        const payload = await this.buildPayload();
+        // this.payloadPreview = JSON.stringify(payload, null, 2);
+        const formData = new FormData();
+        formData.append("data", JSON.stringify(payload));
+        const fileInput = document.getElementById('addFiles');
+        for (const file of fileInput.files) {
+          formData.append("files", file, file.name.replace(/[^a-z0-9.\-_]/gi, '_'));
+        }
+        const response = await fetch('/api/submit', {
+          method: 'POST',
+          body: formData 
+        });
+        const result = await response.json();
+        if (result.success) {
+          alert(`Success! View the PR here: ${result.pr_url}`);
+        } else {
+          alert(`Error: ${result.error}`);
+        }
       }
-      const payload = await this.buildPayload();
-      this.payloadPreview = JSON.stringify(payload, null, 2);
-    }
-  };
-}
+    };
+  }
 </script>
 {% include footer.html %}
 </body>
