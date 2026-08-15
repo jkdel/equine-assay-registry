@@ -190,7 +190,7 @@ nav > ul > li  > a {
   --pico-border-radius: 0.25rem;
 }
 
-[title] {
+*:not(a)[title] {
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--pico-color);

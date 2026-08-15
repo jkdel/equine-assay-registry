@@ -8,7 +8,7 @@
 
           <template x-if="sub.submissionType === 'published'">
             <div class="sub-detail">
-                <a :href="`https://doi.org/${sub.submissionDetails.doi}`"><h4 x-text="sub.submissionDetails.title"></h4></a>
+                <a :href="`https://doi.org/${sub.submissionDetails.doi}`" :title="sub.submissionDetails.doi"><h4 x-text="sub.submissionDetails.title"></h4></a>
                 <ul class="aut-list">
                   <template x-for="aut in sub.submissionDetails.authors">
                     <li><span :title="`ORCiD iD: ${aut.ORCID}, affiliation: ${aut.affiliation.name}`"><span x-text="aut.given"></span> <span x-text="aut.family"></span></span></li>
@@ -20,7 +20,12 @@
 
           <template x-if="sub.submissionType === 'original'">
             <div class="sub-detail">
-              <h4>Original contribution</h4>
+              <template x-if="!sub.submissionDetails.doi">
+                <h4>Original contribution</h4>
+              </template>
+              <template x-if="sub.submissionDetails.doi">
+                <a :href="`https://doi.org/${sub.submissionDetails.doi}`" :title="sub.submissionDetails.doi"><h4>Original contribution</h4></a>
+              </template>
                 <ul class="aut-list">
                   <template x-for="aut in sub.submissionDetails.authors">
                     <li><span :title="`ORCiD iD: ${aut.orcid}, affiliation: ${aut.affiliation}`"><span x-text="aut.firstName"></span> <span x-text="aut.middleInitials"></span> <span x-text="aut.lastName"></span></span></li>
