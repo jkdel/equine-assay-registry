@@ -86,16 +86,15 @@ def upload_file(article_id, file_name):
     complete_upload(article_id, file_info['id'])
 
 def publish_article(article_id):
-    resp = issue_request('POST', f"account/articles/{article_id}/publish")
+    resp = requests.post(BASE_URL.format(endpoint=f"account/articles/{article_id}/publish"))
     if resp.status_code == 202:
-        time.sleep(5)
+        time.sleep(3)
         resp = issue_request('GET', f"account/articles/{article_id}")
-        resp.raise_for_status()
     elif resp.status_code == 200:
         pass
     else:
         resp.raise_for_status()
-    return resp.json().get("doi")
+    return resp.get("doi")
 
 def main():
     changed_files = [f.strip() for f in CHANGED_FILES.split(' ') if f.strip()]
