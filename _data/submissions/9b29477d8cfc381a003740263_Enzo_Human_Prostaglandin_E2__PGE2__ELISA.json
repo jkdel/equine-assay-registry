@@ -1,0 +1,262 @@
+{
+  "id": "9b29477d8cfc381a003740263_Enzo_Human_Prostaglandin_E2__PGE2__ELISA",
+  "date": "Sat, 15 Aug 2026 03:25:29 GMT",
+  "contributor": {
+    "id": "cbf136b910a071a0036c1ca4",
+    "firstName": "Julie",
+    "middleInitials": "Test2",
+    "lastName": "White",
+    "email": "jmw1551@msstate.edu",
+    "affiliation": "MSU CVM DPPM",
+    "orcid": "0000-0000-0000-0000"
+  },
+  "assay": {
+    "target": "Prostaglandin E2 (PGE2)",
+    "targetSpecies": "Human",
+    "type": "ELISA",
+    "manufacturer": "Enzo",
+    "platform": "",
+    "manufacturerRef": "ADI-900-001",
+    "url": "https://www.enzo.com/product/pge2-elisa-kit/#documentation",
+    "availability": "Currently available",
+    "descriptor": "Enzo Human Prostaglandin E2 (PGE2) ELISA"
+  },
+  "submissionType": "published",
+  "submissionDetails": {
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-7728-5409",
+        "authenticated-orcid": false,
+        "suffix": "II",
+        "given": "Harold C.",
+        "family": "Schott",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "College of Veterinary Medicine, Michigan State University Department of Large Animal Clinical Sciences, , East Lansing, Michigan,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Lisanne R.",
+        "family": "Gallant",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "College of Veterinary Medicine, Michigan State University Department of Large Animal Clinical Sciences, , East Lansing, Michigan,",
+            "place": [
+              "USA"
+            ]
+          },
+          {
+            "name": "Newcastle Equine Centre, Lowe St, Broadmeadow , New South Wales,",
+            "place": [
+              "Australia"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michael",
+        "family": "Coyne",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rachel",
+        "family": "Murphy",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Julie",
+        "family": "Cross",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Marilyn",
+        "family": "Strong-Townsend",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Donald",
+        "family": "Szlosek",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Maha",
+        "family": "Yerramilli",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          },
+          {
+            "name": "Novartis Institutes for BioMedical Research , Cambridge, Massachusetts,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jun",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "IDEXX Laboratories, Inc. , Westbrook, Maine,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "title": "Symmetric dimethylarginine and creatinine concentrations in serum of healthy draft horses",
+    "doi": "10.1111/jvim.16042",
+    "coi": "The authors and the contributor have no conflicts of interests to disclose."
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood plasma",
+        "metrics": [
+          {
+            "type": "Upper limit of agreement",
+            "value": "201",
+            "unit": "ng/mL",
+            "comment": "<_>"
+          },
+          {
+            "type": "Inter-assay CV",
+            "value": "4",
+            "unit": "%",
+            "comment": "(<_>)"
+          }
+        ],
+        "year": "2022",
+        "outcome": "Unsuccessful"
+      },
+      {
+        "name": "Urine",
+        "metrics": [
+          {
+            "type": "Recovery",
+            "value": "999999",
+            "unit": "mg/dL",
+            "comment": "^<_>^"
+          }
+        ],
+        "year": "2022",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used in accordance with manufacturer instructions and was not successful."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "Equine_Assay_Registry___Submission_test_1.pdf"
+  ]
+}
