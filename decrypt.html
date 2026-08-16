@@ -1,0 +1,87 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="A simple WebApp to browse and submit equine assay validation data.">
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+  <title>Equine Assay Registry</title>
+</head>
+
+<body>
+  {% include header.html %}
+  <main class="container" x-data="decryptionForm();">
+    <label>
+      Load private key (decryption is performed locally, no upload)
+      <input @change="addKey($event)" type="file"/>
+    </label>
+    <label>
+      Paste text to decrypt
+      <textarea x-model.trim="secret" rows="4"></textarea>
+    </label>
+    <label>
+      Decrypted text
+      <textarea x-text="decrypted" rows="4"></textarea>
+    </label>
+  </main>
+  <script>
+    function decryptionForm() {
+      return {
+        key: null,
+        secret: "",
+        async addKey(event) {
+          const file = event.target.files[0];
+          if (!file) return;              
+          try {
+            const keyText = await file.text();
+            this.key = await window.crypto.subtle.importKey(
+            "jwk",
+            JSON.parse(keyText),
+            { name: "RSA-OAEP", hash: "SHA-256" },
+            true,
+            ["decrypt"]
+            );
+          } catch (error) {
+            console.error("Failed to read file:", error);
+          }
+        },
+        get decrypted() {
+          if (this.secret!="" && this.key != null) {
+            try {
+              const sec = Uint8Array.fromBase64(this.secret);
+              try {
+                return (async () => decryptData(this.key, sec))();
+              } catch (error) {
+                return "Failed at stage 2"
+              }
+            } catch (error) {
+              return "Failed to decrypt"
+            }
+              // return "Failed to decrypt"
+          } else return ""
+        }
+      }
+    }
+    async function decryptData(privateKey, ciphertext) {
+      const decrypted = await window.crypto.subtle.decrypt(
+      { name: "RSA-OAEP" },
+      privateKey,
+      ciphertext
+      );
+      const decoder = new TextDecoder();
+      return decoder.decode(decrypted);
+    }
+  </script>
+  {% include footer.html %}
+</body>
+</html>
