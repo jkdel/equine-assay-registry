@@ -1,0 +1,73 @@
+{
+  "date": "Sun, 16 Aug 2026 13:46:32 GMT",
+  "contributor": {
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "nu21XHgUNByvFCwqENTvBwnzZCbo8gwaN4XrYca2+zIVvbSDNNIekl+NHOY84zxvHFaFtJhYPF7+X52Y5bjtTrG5r3Wd1ojIQmOI0BitEgoRgxmtzyxpfInk/a3a/BdcPI155g9RhP/+EExicZIYIWnx+WGgc6xe4tsjJxvLv287FIUUHPIoKOLIy0dWhk8/FS04dPpSeDPQSCbIjJ+LlKdbYuNcp0CyKiGrAGZPC6I1pGFqifGaKA9224ZX/Du1jxNuf55csEKrigrkzVbFcCGdwkRpEySYLLSA43P2Q6+Rfe0PbEzig6gn+cM62LFONik9Qp5FY04gMELJOzPccQ==",
+    "affiliation": "Mississippi State University",
+    "orcid": ""
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Mercodia",
+    "platform": "",
+    "manufacturerRef": "10-1221-01",
+    "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
+    "availability": "Currently available",
+    "descriptor": "Mercodia Equine Insulin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "notRequired": true
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Julien",
+        "middleInitials": "",
+        "lastName": "Delarocque",
+        "email": "nu21XHgUNByvFCwqENTvBwnzZCbo8gwaN4XrYca2+zIVvbSDNNIekl+NHOY84zxvHFaFtJhYPF7+X52Y5bjtTrG5r3Wd1ojIQmOI0BitEgoRgxmtzyxpfInk/a3a/BdcPI155g9RhP/+EExicZIYIWnx+WGgc6xe4tsjJxvLv287FIUUHPIoKOLIy0dWhk8/FS04dPpSeDPQSCbIjJ+LlKdbYuNcp0CyKiGrAGZPC6I1pGFqifGaKA9224ZX/Du1jxNuf55csEKrigrkzVbFcCGdwkRpEySYLLSA43P2Q6+Rfe0PbEzig6gn+cM62LFONik9Qp5FY04gMELJOzPccQ==",
+        "affiliation": "Mississippi State University",
+        "orcid": ""
+      },
+      {
+        "firstName": "Tobias",
+        "middleInitials": "",
+        "lastName": "Warnken",
+        "email": "ehHuCOBB7030C+EXnyRRmsb9T/ZvHVCxmg7l2diCTOpT7+xSfo3JK9x56Ekao+eJCC3jlgB56lgYKWOKzoJz05twI6qug3JUI8cLW+gCYJNsG5u0v00r4NC24PhlAt/2x4/cGEkRcmLKiuibZ+POgynuPDQxrEKIZC8zIcjlb0HfIyprjq4iRuY0cpoeISp+FjhSPEFpudsxnQIqvRGzhuR0qSQC1BeHCxkG5COGpd47e1aO1EnPCCslkisKYAdQ9xLO+zAHxj0CBKy9z0/TNW3yLxQzoF1SYlz2qD48BC9J2ZWGzbt3hQD0wOfYwKE7flyJeCRQXNKFOqrD5g93Jg==",
+        "affiliation": "",
+        "orcid": ""
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Whole blood",
+        "metrics": [
+          {
+            "type": "Recovery",
+            "value": "100",
+            "unit": "%",
+            "comment": "average"
+          }
+        ],
+        "year": "2020",
+        "validationOutcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "mercodia_plasma_serum.xlsx"
+  ],
+  "id": "526422b71d81a00ad2f3fe_Mercodia_Equine_Insulin_ELISA"
+}
