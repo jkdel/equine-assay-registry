@@ -32,7 +32,7 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          echo CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }}) >> $GITHUB_ENV
+          echo CHANGED_FILES=$(git diff --name-only --diff-filter=A ${{ github.event.pull_request.base.sha }} ${{ github.sha }}) >> $GITHUB_ENV
 
       - name: Run Figshare Minting Script
         env:
