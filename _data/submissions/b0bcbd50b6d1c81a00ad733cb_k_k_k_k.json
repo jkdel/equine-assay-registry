@@ -1,0 +1,66 @@
+{
+  "date": "Sun, 16 Aug 2026 13:51:10 GMT",
+  "contributor": {
+    "firstName": "k",
+    "middleInitials": "",
+    "lastName": "k",
+    "email": "bvFD7PWrrYyvshi7XtXgqMiJlOn3sMPwqgQjAKkwtTZdHasXpu+betqCOViLLmriahNityuwAnhwOZ5b++lvB3G0wJnHxd2PQE88xSW/HBaUH5dZFYd9/Uy/mA4uC7cO3Ou367mzZPkH7c/9dzjh3MEYsaBA0+OhD9nDLa9juBRFIcZS0qFO/BzqYnRWnQrZG13DQ2Nf9yyRydb7GmB+8bee1YQhOS5ucK8jHE2uG7BmIWeVFrVgC1eGDYv1HCQqPAYWC3PwtooNC6tT5zTh91qMKnkmYPUqK1PwX1QanzXp3PJPIFrjoRiuZfFMcjZ7k3NT/yn5k2n5v4i942UMWg==",
+    "affiliation": "k",
+    "orcid": ""
+  },
+  "assay": {
+    "target": "k",
+    "targetSpecies": "k",
+    "type": "k",
+    "manufacturer": "k",
+    "platform": "",
+    "manufacturerRef": "k",
+    "url": "https://www.co.com",
+    "availability": "",
+    "descriptor": "k k k k"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "notRequired": true
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "k",
+        "middleInitials": "",
+        "lastName": "k",
+        "email": "bvFD7PWrrYyvshi7XtXgqMiJlOn3sMPwqgQjAKkwtTZdHasXpu+betqCOViLLmriahNityuwAnhwOZ5b++lvB3G0wJnHxd2PQE88xSW/HBaUH5dZFYd9/Uy/mA4uC7cO3Ou367mzZPkH7c/9dzjh3MEYsaBA0+OhD9nDLa9juBRFIcZS0qFO/BzqYnRWnQrZG13DQ2Nf9yyRydb7GmB+8bee1YQhOS5ucK8jHE2uG7BmIWeVFrVgC1eGDYv1HCQqPAYWC3PwtooNC6tT5zTh91qMKnkmYPUqK1PwX1QanzXp3PJPIFrjoRiuZfFMcjZ7k3NT/yn5k2n5v4i942UMWg==",
+        "affiliation": "k",
+        "orcid": ""
+      },
+      {
+        "firstName": "s",
+        "middleInitials": "",
+        "lastName": "",
+        "email": "AtKvYIypa5+lOErZX7mDiVMzb450HCnLbwVIAutXgN5R3gBiGQahLu81f9ifgVcw42K1OO58BhFrusZ4wXkV1Dzs10HD7cPXHOrS2Y4nXoB4SNvLq3y/Mqo+iyW9MozKMao5dlOv/L3lQLEwmFEdk3snapJDf+MUR/UjKu72d1YwZ2pbryI/OXTInXsx0Y/3xn/omFiwzsNAJYTspko6wpTA6RdJZyxj5tAyEFcQVIC4HRI/osNgqkK6RgD34fV46mNP2yFqxz9OD6ZGi7iOZE8hQrLfyaoOafGF1Z8u/EgpKNRSsm1eMTxeSr3YXmeQzJrCkAwooaBD4adrVEjh8g==",
+        "affiliation": "",
+        "orcid": ""
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Whole blood",
+        "metrics": [],
+        "year": "2020",
+        "validationOutcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "mercodia_plasma_serum.xlsx"
+  ],
+  "id": "b0bcbd50b6d1c81a00ad733cb_k_k_k_k"
+}
