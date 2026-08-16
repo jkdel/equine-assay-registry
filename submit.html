@@ -390,7 +390,7 @@ title: Submit
               <div class="grid">
                 <label>
                   <span class="required">Year of validation</span>
-                  <input class="valid-dates" x-on:focus="validDate()" type="number" min="1900" x-model="mx.year" placeholder="2026" required/>
+                  <input type="number" min="1900" max='{{ "now" | date: "%Y" }}' x-model="mx.year" placeholder='{{ "now" | date: "%Y" }}' required/>
                 </label>
                 <label>
                   <span class="required">Validation was</span>
@@ -457,8 +457,22 @@ title: Submit
     </form>
   </main>
   
-  <script> 
-    // This code was written with support from Copilot between 2026-06 and 2026-08
+  <script>
+    function cleanPayload(obj) {
+      if (obj === null || typeof obj !== 'object') return;
+      if (Array.isArray(obj)) {
+        for (const item of obj) {
+          cleanPayload(item);
+        }
+        return;
+      }
+      delete obj.id;
+      delete obj.metricNewType;
+      for (const key in obj) {
+        cleanPayload(obj[key]);
+      }
+    }
+
     async function fetchDoiData(doi) {
       const url = `https://doi.org/${doi}`;
       try {
@@ -474,8 +488,15 @@ title: Submit
         console.error('Failed to fetch DOI metadata:', error);
       }
     }
+
+    function mClone(obj) {
+      return JSON.parse(JSON.stringify(obj))
+    }
     
-    const uid = () => Math.random().toString(16).slice(2) + Date.now().toString(16);
+    function uid() {
+      return Math.random().toString(16).slice(2) + Date.now().toString(16);
+    }
+
     function assayRegistryForm() {
       return {
         contributor: {
@@ -532,7 +553,6 @@ title: Submit
           ccBy: false
         },
         submissions: [],
-        payloadPreview: "",
         matrixChoices: [
         "Whole blood",
         "Blood plasma",
@@ -567,7 +587,6 @@ title: Submit
           ].map(v => (v || "").trim()).filter(Boolean);
           return Array.from(new Set(raw)).sort((a, b) => a.localeCompare(b));
         },
-        
         addAuthor() {
           this.original.authors.push({
             id: uid(),
@@ -578,12 +597,10 @@ title: Submit
             affiliation: ""
           });
         },
-        
         removeAuthor(idx) {
           if (this.original.authors.length <= 1) return;
           this.original.authors.splice(idx, 1);
         },
-        
         addMatrix() {
           const name = (this.matrixNewName || "").trim();
           if (!name) return;
@@ -600,19 +617,9 @@ title: Submit
           });
           this.matrixNewName = "";
         },
-        
-        validDate() {
-          const validDates = document.getElementsByClassName('valid-dates');
-          const currentYear = new Date().getFullYear();
-          for (let i = 0; i < validDates.length; i++) {
-            validDates[i].max = currentYear;
-          }
-        },
-        
         removeMatrix(idx) {
           this.validation.matrices.splice(idx, 1);
         },
-        
         addMetric(matrixObj) {
           const type = (matrixObj.metricNewType || "").trim();
           if (!type) return;
@@ -625,45 +632,22 @@ title: Submit
           });
           matrixObj.metricNewType = "";
         },
-        
         removeMetric(matrixObj, idx) {
           matrixObj.metrics.splice(idx, 1);
         },
-        
         async buildPayload() {
           this.assay.descriptor = this.assayDesc;
-          this.contributor.email = await encrypt(this.contributor.email);
-          this.original.authors = await Promise.all(
-            this.original.authors.map(async (a) => {
-              const ea = await encrypt(a.email);
-              return {...a, email: ea};
-            })
-          );
           const payload = {
-            id: `${uid()}_${this.assayDesc.replace(/[^a-z0-9.\-_]/gi, '_')}`,
             date: new Date().toUTCString(),
-            contributor: this.contributor,
-            assay: this.assay,
-            submissionType: this.submission.type,
+            contributor: mClone(this.contributor),
+            assay: mClone(this.assay),
+            submissionType: mClone(this.submission.type),
             submissionDetails: {},
-            validation: {
-              matrices: this.validation.matrices.map(mx => ({
-                name: mx.name,
-                metrics: mx.metrics.map(met => ({
-                  type: met.type,
-                  value: met.value,
-                  unit: met.unit,
-                  comment: met.comment
-                })),
-                year: mx.year,
-                outcome: mx.validationOutcome
-              })),
-              method: this.validation.method
-            },
-            additional: this.additional,
+            validation: mClone(this.validation),
+            additional: mClone(this.additional),
             addFiles: [...document.getElementById('addFiles').files].map(a => a.name.replace(/[^a-z0-9.\-_]/gi, '_'))
           };
-          
+          payload.contributor.email = await encrypt(this.contributor.email);
           if (this.submission.type === "published") {
             const doiData = await fetchDoiData(this.published.doi);
             payload.submissionDetails = {
@@ -675,7 +659,6 @@ title: Submit
               : (this.published.coiText || "").trim()
             };
           }
-          
           if (this.submission.type === "original") {
             const ao = Array.from(document.getElementById("authorlist").querySelectorAll("[data-uid]")).map(el => el.dataset.uid);
             payload.submissionDetails = {
@@ -685,25 +668,25 @@ title: Submit
               coi: this.original.coiChoice === "none"
               ? "The authors have no conflicts of interests to disclose."
               : (this.original.coiText || "").trim(),
-              authors: this.original.authors.map(a => ({
-                id: a.id,
-                firstName: a.firstName,
-                middleInitials: a.middleInitials,
-                lastName: a.lastName,
-                email: a.email,
-                affiliation: a.affiliation,
-                orcid: a.orcid
-              }))
-              .concat(this.contributor)
+              authors: mClone(this.original.authors)
+            };
+            payload.submissionDetails.authors = await Promise.all(
+              payload.submissionDetails.authors.map(async (a) => {
+                a.email = await encrypt(a.email);
+                return a
+              })
+            );
+            payload.submissionDetails.authors = payload.submissionDetails.authors
+              .concat(payload.contributor)
               .sort((a, b) => {
                 return ao.indexOf(a.id) - ao.indexOf(b.id) // sort according to author order (ao)
               })
               .filter(aut => aut.firstName != '')
-            };
           }
+          cleanPayload(payload);
+          payload.id = `${uid()}_${this.assayDesc.replace(/[^a-z0-9.\-_]/gi, '_')}`;
           return payload;
         },
-        
         async preview() {
           if (this.validation.matrices.length < 1) {
             document.getElementById("matrixInputHelper").style.visibility = "visible";
@@ -714,7 +697,6 @@ title: Submit
           console.log(JSON.stringify(payload, null, 2));
           this.submissions = [payload];
         },
-        
         async submit() {
           if (this.validation.matrices.length < 1) {
             document.getElementById("matrixInputHelper").style.visibility = "visible";
@@ -752,7 +734,8 @@ title: Submit
       );
     }
     
-    const key = loadKey();    
+    const key = loadKey();
+    
     async function encrypt(secret) {
       const encoder = new TextEncoder();
       const data = encoder.encode(secret);
