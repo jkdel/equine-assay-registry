@@ -1,0 +1,160 @@
+{
+  "date": "Wed, 19 Aug 2026 12:39:00 GMT",
+  "contributor": {
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "ruiAWsx/xF7rpVF5eEkBtGY+nxY3D697st/7xBewaW87LE+PaYi4slT+zYIwj+yMwhgP/yFV73VLWo3WhpBaEAzkZk9O94Yjsmcms1GpCarj31gsbQs4N9LjHMbSMPmlcMbrIezHsozlF0M8gaNpgffJX/M6WyQz8nmAoeINYEYeH1RUdV37qZgmkYriiFi53U6dYbJUmj06f6n+avGzgvyZ9PM1f1YaHKgs9r/lxIKpR2h8u6JSIrLkHtAIM6BR9vAnZKI5vCttjKz7qDYdLoHmKDBG0KYLei1y9zGFc4GXPvNEyQed0Apv6BXrCUTcLuah2vf8kj8gC1O0BxSv/A==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-4598-3499"
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Human",
+    "type": "FEIA",
+    "manufacturer": "Tosoh",
+    "platform": "AIA-360",
+    "manufacturerRef": "0025260",
+    "url": "https://www.tosohbioscience.com/IN-EN-diagnostics/products/st-aia-pack-iri",
+    "availability": "Currently available",
+    "descriptor": "Tosoh AIA-360 Human Insulin FEIA"
+  },
+  "submissionType": "published",
+  "submissionDetails": {
+    "authors": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9383-0067",
+        "authenticated-orcid": false,
+        "given": "Rose D.",
+        "family": "Nolen-Walston",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "New Bolton Center, School of Veterinary Medicine, University of Pennsylvania Department of Clinical Studies, , Kennett Square, Pennsylvania,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jeaneen C.",
+        "family": "Kulp",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "New Bolton Center, School of Veterinary Medicine, University of Pennsylvania Department of Clinical Studies, , Kennett Square, Pennsylvania,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4654-0569",
+        "authenticated-orcid": false,
+        "given": "Darko",
+        "family": "Stefanovski",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "New Bolton Center, School of Veterinary Medicine, University of Pennsylvania Department of Clinical Studies, , Kennett Square, Pennsylvania,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6108-2503",
+        "authenticated-orcid": false,
+        "given": "Andrew W.",
+        "family": "van Eps",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "New Bolton Center, School of Veterinary Medicine, University of Pennsylvania Department of Clinical Studies, , Kennett Square, Pennsylvania,",
+            "place": [
+              "USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "title": "Evaluation of an Automated Fluorescence Enzyme Immunoassay for Quantification of Equine Insulin and Comparison to Five Other Immunoassays",
+    "doi": "10.1111/jvim.70038",
+    "coi": "The authors and the contributor have no conflicts of interests to disclose."
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Intra-assay CV",
+            "value": "1.8",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Inter-assay CV",
+            "value": "5.7",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.996",
+            "unit": "R²",
+            "comment": ""
+          },
+          {
+            "type": "Recovery",
+            "value": "104.2",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Passing-Bablok regression equation compared to Millipore RIA",
+            "value": "",
+            "unit": "Tosoh = 0.78 x RIA - 8.9",
+            "comment": "n = 100 with values of 11.7–318 μIU/mL"
+          }
+        ],
+        "year": "2025",
+        "outcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "Analytical range: 0.5 to 320 μIU/mL. Antibody registration: https://www.antibodyregistry.org/AB_3107181",
+    "forReview": ""
+  },
+  "addFiles": [],
+  "id": "6031052f22a611a01a083623_Tosoh_AIA-360_Human_Insulin_FEIA"
+}
