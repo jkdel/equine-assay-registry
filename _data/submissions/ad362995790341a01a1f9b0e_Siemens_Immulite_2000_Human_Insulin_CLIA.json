@@ -1,0 +1,129 @@
+{
+  "date": "Wed, 19 Aug 2026 13:04:33 GMT",
+  "contributor": {
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "m14E5QIxO8dY58BcTCW2U3+fb0XtTHR+QEXTwAXlVi7TAsfjshhGsQiW/X96qsFTCNxExbq8RWW15cUgkq+9R4WwiGOH06Pny1up1qJfTWAjD21BPZYbztoFhSf7wC1jxvobJP/aFeEsqIDLRaCB3inEtjKTUK23iKZ7ZScLr4pXscwngTbkjObOOveehlDt9DB/Ul6n+1HzUMVgi2zKZQgXdp3NFaY8GZrnGPaG4zCVP1eydI3Xrft8hzhO6lrIYecgXY9ebHLyk9IM5R3iOwZ87IQJ0KsKdHbQ5U1ISybw8M7Y1IBc7aWSUhYebLlUpvUDHdYfhnbwitmhhZDEsw==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-4598-3499"
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Human",
+    "type": "CLIA",
+    "manufacturer": "Siemens",
+    "platform": "Immulite 2000",
+    "manufacturerRef": "L2KIN2",
+    "url": "https://www.siemens-healthineers.com/nl/immunoassay/systems/immulite-2000-immunoassay-ystem",
+    "availability": "Currently available",
+    "descriptor": "Siemens Immulite 2000 Human Insulin CLIA"
+  },
+  "submissionType": "published",
+  "submissionDetails": {
+    "authors": [
+      {
+        "given": "H.B.",
+        "family": "Carslake",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Institute of Aging and Chronic Disease, Faculty of Health and Life Sciences, University of Liverpool , Neston, Wirral,",
+            "place": [
+              "UK"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "G.L.",
+        "family": "Pinchbeck",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Institute of Infection and Global Health, Faculty of Health and Life Sciences, University of Liverpool , Neston, Wirral,",
+            "place": [
+              "UK"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "C.M.",
+        "family": "McGowan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Institute of Aging and Chronic Disease, Faculty of Health and Life Sciences, University of Liverpool , Neston, Wirral,",
+            "place": [
+              "UK"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "title": "Evaluation of a Chemiluminescent Immunoassay for Measurement of Equine Insulin",
+    "doi": "10.1111/jvim.14657",
+    "coi": "The authors and the contributor have no conflicts of interests to disclose."
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Intra-assay CV",
+            "value": "2.03",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Inter-assay CV",
+            "value": "5.5",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.94",
+            "unit": "R²",
+            "comment": "for standard diluent"
+          },
+          {
+            "type": "Deming regression equation compared to Siemens Coat-a-Count",
+            "value": "",
+            "unit": "Immulite 2000 = 1.24 x Coat-a-Count - 7.98",
+            "comment": ""
+          }
+        ],
+        "year": "2017",
+        "outcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "Analytical range: 2 to 300 μIU/mL. Antibody registration: https://www.antibodyregistry.org/AB_2756390",
+    "forReview": ""
+  },
+  "addFiles": [],
+  "id": "ad362995790341a01a1f9b0e_Siemens_Immulite_2000_Human_Insulin_CLIA"
+}
