@@ -1,0 +1,144 @@
+{
+  "date": "Wed, 19 Aug 2026 12:22:38 GMT",
+  "contributor": {
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "AZO8aQLPW9/JtnUzxkxhcTgxvbFEdGHezemfPlggB2sMxIvSqGzyJnae33x5W32gP07OiKTd5xHeUSoBuaksA9A3KPhMppvIdZieTfUNV+k1mCqEsORL5NvogyjvVWm5fKCGgtoRfgd4sXAAPvaegho8xek2KEUwzO8Vx1m2HMXz8dKUnMygXJbrcWe6pbSfqWUdbYhIQ7xfS3CMV6ndhANUBCGJJDO5BjoHWtOmzYDEEJyQtDjjoIvM+PKXGK2GKmoIvAWxjIClTSAGm68mHdNSxNB9ZTrve3TMa7VCQvKsNtYkF3s9wMgNmmgUhmsC4+9SFPFYtDgih/xJdii5Qw==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-4598-3499"
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Human",
+    "type": "CLIA",
+    "manufacturer": "Siemens",
+    "platform": "ADVIA Centaur XPT",
+    "manufacturerRef": "02230141",
+    "url": "https://www.siemens-healthineers.com/laboratory-diagnostics/clinical-chemistry-and-immunoassay-systems/advia-centaur-xpt",
+    "availability": "Currently available",
+    "descriptor": "Siemens ADVIA Centaur XPT Human Insulin CLIA"
+  },
+  "submissionType": "published",
+  "submissionDetails": {
+    "authors": [
+      {
+        "given": "R.",
+        "family": "Rey-Conejo",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "R.E.",
+        "family": "Toribio",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "S.",
+        "family": "Möller",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "E.",
+        "family": "Müller",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "given": "P.",
+        "family": "Fores-Jackson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "title": "Clinical evaluation of the ADVIA Centaur XPT chemiluminescent immunoassay for equine insulin measurement",
+    "doi": "10.1016/j.jevs.2025.105661",
+    "coi": "R. Rey-Conejo reports equipment, drugs, or supplies was provided by Laboklin Laboratory for Clinical Diagnostics GmbH & Co."
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Intra-assay CV",
+            "value": "2.50",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Inter-assay CV",
+            "value": "5.55",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.99",
+            "unit": "R²",
+            "comment": "n = 8"
+          },
+          {
+            "type": "Recovery",
+            "value": "105.81",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Spearman correlation coefficient with Immulite 2000 XPi",
+            "value": "0.89",
+            "unit": "",
+            "comment": "n = 89"
+          },
+          {
+            "type": "Deming regression line against Immulite 2000 XPi",
+            "value": "",
+            "unit": "Immulite = 0.4686 x ADVIA + 0.4906",
+            "comment": ""
+          }
+        ],
+        "year": "2025",
+        "outcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "Analytical range: 0.5 to 300 μIU/mL. Antibody registration: https://www.antibodyregistry.org/AB_2909499",
+    "forReview": ""
+  },
+  "addFiles": [],
+  "id": "520debe63deaa1a019f93a17_Siemens_ADVIA_Centaur_XPT_Human_Insulin_CLIA"
+}
