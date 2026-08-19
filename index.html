@@ -40,7 +40,7 @@ title: Search
           search: '',
           assays: [
             {% for assay in assays %}{descriptor: '{{assay}}'}, {% endfor %}
-          ],
+          ].sort((a, b) => a.descriptor.localeCompare(b.descriptor)),
           get assay_filter() {
             if(this.search) {
               return this.assays.filter(assay => {
@@ -52,6 +52,7 @@ title: Search
     
       <h2>Start searching for an assay</h2>
       <input type="search" id="msearch" x-model="search" placeholder="Target, method, manufacturer…">
+      <div class="search-res">
         <template x-for="assay in assay_filter">
           <a x-bind:href="'detail.html?descriptor=' + assay.descriptor" class="no-underline">
             <div class="cardish ares">
@@ -59,6 +60,7 @@ title: Search
             </div>
           </a>
         </template>
+      </div>
     </div>
   </main>
   {% include footer.html %}
