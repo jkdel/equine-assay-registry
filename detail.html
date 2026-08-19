@@ -1,0 +1,68 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="A simple WebApp to browse and submit equine assay validation data.">
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+  <title>Equine Assay Registry</title>
+</head>
+
+<body>
+  {% include header.html %}
+  <main class="container">
+
+  {% assign submissions = "" | split: "" %}
+  {% for submission in site.data.submissions %}
+    {% assign submissions = submissions | push: submission[0] %}
+  {% endfor %}
+
+  <script>
+    async function loadJsonFiles(files) {
+      try {
+        const fetchPromises = files.map(file => 
+          fetch(file).then(response => {
+            if (!response.ok) throw new Error(`Failed to load ${file}`);
+            return response.json();
+          })
+        );
+        return await Promise.all(fetchPromises);
+      } catch (error) {
+        console.error("Error loading JSON files:", error);
+      }
+    }
+  </script>
+
+  <div x-data='{
+            descriptor: "",
+            submissions: {{submissions | jsonify}},
+            init() {
+              const urlParams = new URLSearchParams(window.location.search);
+              this.descriptor = urlParams.get("descriptor") || "";
+              this.subs = this.submissions.filter(s => s.includes(this.descriptor.replace(/[^a-z0-9.\-_]/gi, "_"))).map(s => `./_data/submissions/${s}.json`);
+              this.submissions = loadJsonFiles(this.subs);
+            }
+   }'>
+   
+   <button onclick="document.referrer ? history.back() : window.location.href = 'index.html';" class="outline" style="margin-bottom: 20px;">< Back</button>
+   <h2 x-text="descriptor"></h2>
+   
+      <p><span x-text="subs.length"></span> <span x-show="subs.length != 1">records were found.</span><span x-show="subs.length === 1">record was found.</span></p>
+
+      {% include assay-cardview.html %}
+
+  </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

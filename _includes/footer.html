@@ -1,0 +1,30 @@
+<footer class="container">
+    <p>All the information provided on this website is published in good faith
+        and for general information purposes only. We do not make any warranties
+        about the completeness, reliability, and accuracy of this information.
+        Publication of assay validation data does not constitute an endorsement of
+        assay validity by Mississippi State University or addiliated departments,
+        centers, or individuals.</p>
+        <p>This is an open source project. <a href="background.html">Read more about
+            it here</a> or <a
+            href="https://github.com/jkdel/equine-assay-registry">browse the sources on
+            GitHub</a>.</p>
+            <p>© Julien Delarocque, Nancy Fair Link Laminitis Research Center, Department
+                of Comparative Biomedical Sciences, College of Veterinary Medicine,
+                Mississippi State University. <a href="to:&#x69;&#x6E;&#x66;&#x6F;$%" class="mt" aria-label="Email us">Get in touch.</a>
+            </p>
+            <script>
+                document.addEventListener('DOMContentLoaded', function ()
+                {
+                    const parser = new DOMParser();
+                    document.querySelectorAll('.mt').forEach(element => {
+                        const li = element.getAttribute('href')
+                        .replace('$', '&#x40;&#x65;&#x71;&#x75;&#x69;&#x6E;&#x65;&#x5F;')
+                        .replace('%', 'assay_registry.org')
+                        .replace('to:', 'mailto:')
+                        const doc = parser.parseFromString(li, 'text/html');
+                        element.setAttribute('href', doc.documentElement.textContent.replaceAll('_', '-'));
+                    });
+                });
+            </script>
+        </footer>

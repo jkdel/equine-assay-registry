@@ -1,0 +1,150 @@
+---
+title: Background
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="A simple WebApp to browse and submit equine assay validation data.">
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Equine Assay Registry</title>
+</head>
+
+<body>
+  {% include header.html %}
+  <main class="container">
+      <h1>Equine Assay Registry</h1>
+      <p>
+        The Equine Assay Registry is a collaborative database of assays that
+        have been tested successfully and unsuccessfully for use in equids. The
+        aim is to improve transparency, reproducibility, and efficiency in
+        equine research by reducing duplicated effort.
+      </p>
+      <h2>1. Purpose</h2>
+      <p>
+        Relatively few assays are developed specifically for equine
+        applications, and research in horses often relies on assays designed for
+        other species. Due to variable cross-species homology, identifying
+        assays that perform reliably in equids can be time-consuming and
+        resource-intensive. We propose to build a free, open, and collaborative
+        repository of assay validation data to facilitate equine research.
+        Users can search for assays and their validation outcomes in
+        equids as well as submit validation data.
+      </p>
+      <h2>2. Contributing and Sharing Validation Data</h2>
+      <h3>2.1. Types of contributions</h3>
+      <ul>
+        <li><strong>Original validation data:</strong> Information about an
+        assay that has not been published before can be submitted using the
+        <a href="./submit.html">submission form</a>. Only authors may contribute
+        original validation data. The contribution will be assigned a citable
+        DOI.</li>
+        <li><strong>Published validation data:</strong> An entry submitted using
+        the <a href="./submit.html">submission form</a> can be linked to
+        published works. This is comparable to registering a publication into
+        the database, not to claiming authorship. Contributors are therefore not
+        required to be the authors of the original work. This type of
+        contribution will not be assigned a DOI.</li>
+        <li><strong>Additions to existing entries:</strong> Additional data may
+        be added for an assay that is already present in the database. Search
+        results include all accepted entries for each assay. Corrections to
+        previous submissions can be made by contributors and authors by
+        contacting us <a href="to:&#x69;&#x6E;&#x66;&#x6F;$%" class="mt"
+        aria-label="Email us">via email</a> or submitting an issue or pull
+        request for the submission data <a
+        href="https://github.com/jkdel/equine-assay-registry">on
+        GitHub</a>.</li>
+      </ul>
+      <h3>2.2. Attribution</h3>
+      <ul>
+        <li><strong>Authors</strong> are those who originally validated the
+        assay. Authors may submit their data to the repository as contributors
+        and the entry will be assigned a citable DOI if the work has not been
+        previously published.</li>
+        <li><strong>Contributors</strong> are individuals who submit data to the
+        registry. Anyone may contribute published works to the repository, but
+        these contributions will not be attributed a DOI.</li>
+      </ul>
+      <h3>2.3. Licensing</h3>
+      <ul>
+        <li>All submitted data are shared under a <strong>CC-BY 4.0 license</strong></li>
+        <li>By submitting content, contributors agree to this license</li>
+        <li>Contributors are responsible for ensuring that their submissions
+        comply with any applicable licenses from original sources (e.g.,
+        published validation studies)</li>
+      </ul>
+      <h3>2.4. Transparency and Review Process</h3>
+      <ul>
+        <li>The submission process is fully open. All contributions are visible
+        <a href="https://github.com/jkdel/equine-assay-registry">on
+        GitHub</a>.</li>
+        <li>The identity of contributors will be verified via email.</li>
+        <li>The following aspects will be given specific attention during review:</li>
+        <ul>
+          <li>Does the assay fall in the scope of the registry (validation for equine matrix)?</li>
+          <li>Is there sufficient data to support the validation outcome? We
+          strongly encourage submission of the raw data in a format allowing
+          independent and reproducible interpretation as additional files.</li>
+          <li>Is the validation outcome interpretation (sucessfull, unsucessful)
+          plausible? Please use the additional information field to justify your
+          conclusion.</li>
+        </ul>
+        <li>We adhere to the following policies:</li>
+        <ul>
+          <li><b>Authorship:</b> We adhere to the definition of authorship <a
+          href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html">provided
+          by ICMJE</a>.</li>
+          <li><b>Research ethics:</b> Submissions are based on research
+          involving animals by definition. We require contributors and authors
+          to follow to national and international laws and guidelines for
+          research conducted in animals. Approval by IACUC committees or
+          equivalent must be disclosed in the submission form.</li>
+          <li><b>Plagiarism and duplicate publications:</b> Submission of
+          previously published validation data ("Link to published validation
+          data" in the submission form) is <em>encouraged</em>. Submission of
+          previously published validation data as "Original validation data"
+          <em>is not acceptable</em> as it would constitute a <a
+          href="https://publicationethics.org/guidance/flowchart/redundant-duplicate-publication-published-article">duplicate
+          publication as defined by COPE</a>.</li>
+          <li><b>Competing interest:</b> Authors and contributors must disclose
+          any conflict of interest during the submission process. This includes
+          financial or professional interests related to a submitted assay.</li>
+          <li><b>Peer review:</b> The review process is unblinded. The original
+          submission and subsequent changes can be found on GitHub.
+          Correspondance with contributors will remain confidential. We adhere
+          to the <a
+          href="https://publicationethics.org/guidance/guideline/ethical-guidelines-peer-reviewers">COPE
+          Ethical guidelines for peer reviewers</a>.</li>
+        </ul>
+        <li>Additional information may be requested from contributors by the reviewer.</li>
+        <li>Submissions may be modified by the reviewer during review. The
+        changes will be validated by the contributor before acceptance.</li>
+        <li>A justification will be provided on GitHub and to the contributor
+        for rejected submissions.</li>
+      </ul>
+      <h2>3. Scope and Limitations</h2>
+      <ul>
+        <li>The registry focuses on <strong>assays evaluated in equine samples</strong></li>
+        <li>Validation quality and completeness depend on submitted data</li>
+        <li>Inclusion in the registry does not constitute endorsement of assay validity or performance</li>
+      </ul>
+      <h2>4. Backend and Technical Framework</h2>
+      <p>
+        This project is designed to be extensible and adaptable to other
+        domains. The codebase is available under the <strong><a
+        href="https://choosealicense.com/licenses/agpl-3.0/">AGPL-3.0
+        license</a></strong>. Read more about it <a
+        href="https://github.com/jkdel/equine-assay-registry">on GitHub</a>.
+      </p>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

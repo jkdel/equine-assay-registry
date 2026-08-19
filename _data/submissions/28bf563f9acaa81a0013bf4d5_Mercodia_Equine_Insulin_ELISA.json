@@ -1,0 +1,84 @@
+{
+  "id": "28bf563f9acaa81a0013bf4d5_Mercodia_Equine_Insulin_ELISA",
+  "date": "Fri, 14 Aug 2026 17:05:01 GMT",
+  "contributor": {
+    "id": "8ea03f29a901f81a001011996",
+    "firstName": "Julien",
+    "middleInitials": "",
+    "lastName": "Delarocque",
+    "email": "julien.delarocque@msstate.edu",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-4598-3499"
+  },
+  "assay": {
+    "target": "Insulin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Mercodia",
+    "platform": "",
+    "manufacturerRef": "10-1205-01",
+    "url": "https://www.mercodia.com/products/equine-insulin-elisa/",
+    "availability": "Currently available",
+    "descriptor": "Mercodia Equine Insulin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Lower Saxony State Office for Consumer Protection and Food Safety (LAVES)",
+      "fileNumber": "17/2646"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "id": "8ea03f29a901f81a001011996",
+        "firstName": "Julien",
+        "middleInitials": "",
+        "lastName": "Delarocque",
+        "email": "julien.delarocque@msstate.edu",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-4598-3499"
+      },
+      {
+        "id": "59d8a7dd3f8d681a001011996",
+        "firstName": "Tobias",
+        "middleInitials": "",
+        "lastName": "Warnken",
+        "email": "",
+        "affiliation": "University of Veterinary Medicine Hannover",
+        "orcid": "0000-0002-0741-4674"
+      }
+    ],
+    "doi": "10.6084/m9.figshare.33263403" 
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood plasma",
+        "metrics": [
+          {
+            "type": "Pearson correlation coefficient with blood serum",
+            "value": "0.986",
+            "unit": "",
+            "comment": "n = 111"
+          },
+          {
+            "type": "Robust regression plasma to serum",
+            "value": "",
+            "unit": "Serum = 1.014 x Plasma + 0.254",
+            "comment": "n = 111"
+          }
+        ],
+        "year": "2020",
+        "outcome": "Successful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "mercodia_plasma_serum.xlsx"
+  ]
+}

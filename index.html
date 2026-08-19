@@ -1,0 +1,66 @@
+---
+title: Search
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="A simple WebApp to browse and submit equine assay validation data.">
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+  <title>Equine Assay Registry</title>
+</head>
+
+<body>
+  {% include header.html %}
+  <main class="container">
+    
+    <p>
+      The Equine Assay Registry is a collaborative database of immunoassays that have been tested (sucessfully and
+      unsucessfully) for use in equids. It aims to improve transparency, reproducibility, and
+      efficiency in equine research by reducing duplicated effort.
+    </p>
+    
+    {% assign assays = "" | split: "" %}
+    {% for submission in site.data.submissions %}
+      {% assign d = submission[1] %}
+      {% assign assays = assays | push: d.assay.descriptor %}
+    {% endfor %}
+    {% assign assays = assays | uniq %}
+
+    <div x-data="{
+          search: '',
+          assays: [
+            {% for assay in assays %}{descriptor: '{{assay}}'}, {% endfor %}
+          ],
+          get assay_filter() {
+            if(this.search) {
+              return this.assays.filter(assay => {
+                return assay.descriptor.toLowerCase().includes(this.search.toLowerCase());
+              });
+            } else {
+              return this.assays
+            }}}">
+    
+      <h2>Start searching for an assay</h2>
+      <input type="search" id="msearch" x-model="search" placeholder="Target, method, manufacturer…">
+        <template x-for="assay in assay_filter">
+          <a x-bind:href="'detail.html?descriptor=' + assay.descriptor" class="no-underline">
+            <div class="cardish ares">
+              <h3 x-text="assay.descriptor"></h2>
+            </div>
+          </a>
+        </template>
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,751 @@
+---
+title: Submit
+---
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/sort@3.15.12/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+  <title>Equine Assay Registry</title>
+</head>
+<body>
+  {% include header.html %}
+  
+  <main class="container">
+    <header>
+      <h1>Submit Validation Data</h1>
+      <p class="muted">
+        Fields marked with <span class="required"></span> are required.
+      </p>
+    </header>
+    
+    <form @submit.prevent="submit();" id="arf" x-data="assayRegistryForm();">
+      
+      <!-- Contributor -->
+      <fieldset>
+        <legend>Contributor (you)</legend>
+        
+        <div class="grid">
+          <label>
+            <span class="required">First name</span>
+            <input type="text" x-model.trim="contributor.firstName" placeholder="e.g., Jane" required/>
+          </label>
+          <label>
+            Middle initials
+            <input type="text" x-model.trim="contributor.middleInitials" placeholder="e.g., A. B."/>
+          </label>
+          <label>
+            <span class="required">Last name</span>
+            <input type="text" x-model.trim="contributor.lastName" placeholder="e.g., Doe" required/>
+          </label>
+        </div>
+        
+        <div class="grid">
+          <label>
+            <span class="required">Email</span>
+            <input type="email" x-model.trim="contributor.email" autocomplete="email" placeholder="e.g., jane.doe@institution.edu" required/>
+          </label>
+          <label>
+            <span class="required">Affiliation</span>
+            <input type="text" x-model.trim="contributor.affiliation" list="affiliations" placeholder="e.g., Institution, Department" required/>
+          </label>
+          <label>
+            ORCiD iD
+            <input type="text" x-model.trim="contributor.orcid" placeholder="e.g., 0000-0000-0000-0000" pattern="^(\d{4}-){3}\d{3}(\d|X)$"/>
+          </label>
+        </div>
+      </fieldset>
+      
+      <datalist id="affiliations">
+        <template x-for="aff in affiliationsList" :key="aff">
+          <option :value="aff"></option>
+        </template>
+      </datalist>
+      
+      <!-- Assay -->
+      <fieldset>
+        <legend>Assay</legend>
+        
+        <div class="grid">
+          <label>
+            <span class="required">Assay target</span>
+            <!-- TODO: Add dynamically generated list from assays present in database -->
+            <input type="text" x-model.trim="assay.target" placeholder="e.g., Insulin" required/>
+          </label>
+          <label>
+            <span class="required">Original target species</span>
+            <!-- TODO: Add dynamically generated list from species present in database -->
+            <input type="text" x-model.trim="assay.targetSpecies" placeholder="e.g., Human, Mouse, Canine" required/>
+          </label>
+          <label>
+            <span class="required">Type of assay</span>
+            <!-- TODO: Add dynamically generated list from assay types present in database -->
+            <input type="text" x-model.trim="assay.type" placeholder="e.g., ELISA, RIA, CLIA" required/>
+          </label>
+        </div>
+        
+        <div class="grid">
+          <label>
+            <span class="required">Manufacturer</span>
+            <input type="text" x-model.trim="assay.manufacturer" placeholder="Company name" required/>
+          </label>
+          <label>
+            <span>Platform</span>
+            <input type="text" x-model.trim="assay.platform" placeholder="e.g., IMMULITE 2000 XPi"/>
+          </label>
+          <label>
+            <span>Descriptor</span>
+            <input type="text" x-model="assayDesc" disabled/>
+          </label>
+        </div>
+        
+        <div class="grid">
+          <label>
+            <span class="required">Assay manufacturer catalog number</span>
+            <input type="text" x-model.trim="assay.manufacturerRef" placeholder="Catalog # / Product ID" required/>
+          </label>
+          <label>
+            <span class="required">Vendor/manufacturer URL</span>
+            <input type="url" x-model.trim="assay.url" required/>
+          </label>
+          <label>
+            <span>Assay availability</span>
+            <select x-model="assay.availability">
+              <option value="" disabled>Select…</option>
+              <option>Currently available</option>
+              <option>Currently unavailable</option>
+              <option>Commercial distribution was discontinued</option>
+              <option>Not commercially available</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+      
+      <!-- Submission details -->
+      <fieldset>
+        <legend>Submission details</legend>
+        
+        <label>
+          <span class="required">Type of submission</span>
+          <select x-model="submission.type" required>
+            <option value="" disabled>Select…</option>
+            <option value="published">Link to published validation data</option>
+            <option value="original">Original validation data</option>
+          </select>
+        </label>
+        
+        <!--  Published validation data -->
+        <section x-show="submission.type === 'published'" x-transition class="cardish">
+          <h3>Published validation data</h3>
+          <label>
+            <span class="required">Publication DOI</span>
+            <input type="text" x-model.trim="published.doi" placeholder="10.0000/000000" pattern="10.\d{4,9}\/[\-\._;\(\)\/\:a-zA-Z0-9]+" :required="submission.type === 'published'"/>
+          </label>
+          <fieldset>
+            <legend class="required">Conflicts of interest</legend>
+            <fieldset>
+              <label>
+                <input type="radio" name="publishedCoi" value="none" x-model="published.coiChoice" :required="submission.type === 'published'"/>
+                The authors of the original publication declared no competing interests. The contributor has no competing interests to disclose.
+              </label>
+              <label>
+                <input type="radio" name="publishedCoi" value="disclose" x-model="published.coiChoice"/>
+                Disclosure of potential competing interests
+              </label>
+            </fieldset>
+            <template x-if="published.coiChoice === 'disclose'">
+              <fieldset>
+                <label>
+                  <span class="required">Conflict of interest statement</span>
+                  <textarea x-model.trim="published.coiText" rows="3" placeholder="Please include the conflict of interest statement of the original publication when available; otherwise disclose your relationship to the work or to any entity which might benefit from the submitted data." :required="published.coiChoice === 'disclose'"></textarea>
+                </label>
+              </fieldset>
+            </template>
+          </fieldset>
+        </section>
+        
+        <!-- Original validation data -->
+        <section x-show="submission.type === 'original'" x-transition class="cardish">
+          <h3>Original validation data</h3>
+          <label>
+            <input type="checkbox" x-model="original.isAuthor" :required="submission.type === 'original'"/>
+            <span class="required">I am an author/co-author of the validation data</span>
+          </label>
+          <label>
+            <input type="checkbox" x-model="original.authorized" :required="submission.type === 'original'"/>
+            <span class="required">I confirm that I am authorized to submit this data</span>
+          </label>
+          
+          <!-- Additional authors list -->
+          <div>
+            <div class="add-list">
+              <strong>Additional author(s)</strong>
+              <button type="button" class="secondary" @click="addAuthor()">Add author</button>
+            </div>
+            <template x-for="(a, idx) in original.authors" :key="a.id">
+              <article class="cardish">
+                <header class="add-list">
+                  <div><strong>Author</strong> <span class="muted">#<span x-text="idx + 2"></span></span></div>
+                  <button type="button" class="contrast" @click="removeAuthor(idx)" :disabled="original.authors.length === 0">
+                    Remove
+                  </button>
+                </header>
+                <div class="grid">
+                  <label>
+                    <span class="required">First name</span>
+                    <input type="text" x-model.trim="a.firstName" placeholder="e.g., Jane" :required="original.authors.length > 0"/>
+                  </label>
+                  <label>
+                    Middle initials
+                    <input type="text" x-model.trim="a.middleInitials" placeholder="e.g., A. B."/>
+                  </label>
+                  <label>
+                    <span class="required">Last name</span>
+                    <input type="text" x-model.trim="a.lastName" placeholder="e.g., Doe" :required="original.authors.length > 0"/>
+                  </label>
+                </div>
+                <div class="grid">
+                  <label>
+                    Email
+                    <input type="email" x-model.trim="a.email" autocomplete="email" placeholder="e.g., jane.doe@institution.edu"/>
+                  </label>
+                  <label>
+                    <span class="required">Affiliation</span>
+                    <input type="text" x-model.trim="a.affiliation" list="affiliations" placeholder="e.g., Institution, Department" :required="original.authors.length > 0"/>
+                  </label>
+                  <label>
+                    ORCiD iD
+                    <input type="text" x-model.trim="a.orcid" placeholder="e.g., 0000-0000-0000-0000" pattern="^(\d{4}-){3}\d{3}(\d|X)$"/>
+                  </label>
+                </div>
+              </article>
+            </template>
+          </div>
+          
+          <fieldset>
+            <legend>Author order</legend>
+            <label>
+              Drag-and-drop the authors in the sequence of authorship
+              <div class="author-list" id="authorlist" x-sort>
+                <template x-for="(b,index) in [contributor].concat(original.authors).filter(n => n.firstName != '')" :key="b.id">
+                  <p class="author-tag" x-sort:item="index" x-text="`${b.firstName} ${b.middleInitials} ${b.lastName}`" :data-uid="b.id"></p>
+                </template>
+              </div>
+            </label>
+            <label>
+              <input type="checkbox" x-model="original.validAuthorOrder" :required="submission.type === 'original'" />
+              <span class="required">I confirm that the sequence of authorship is correct</span>
+            </label>
+          </fieldset>
+          
+          <!-- Ethics approval -->
+          <fieldset>
+            <legend class="required">Ethics approval</legend>
+            <fieldset>
+              <label>
+                <input type="radio" name="ethics" value="notRequired" x-model="original.ethicsChoice" :required="submission.type === 'original'"/>
+                The validation was not subject to ethical approval according to national and international regulations
+              </label>
+              <label>
+                <input type="radio" name="ethics" value="approved" x-model="original.ethicsChoice" />
+                Samples for this validation were obtained through an approved protocol
+              </label>
+            </fieldset>
+            <template x-if="original.ethicsChoice === 'approved'">
+              <fieldset>
+                <div class="grid">
+                  <label>
+                    <span class="required">Approved by</span>
+                    <input type="text" x-model.trim="original.ethicsApprovedBy" list="affiliations" placeholder="Institution / committee" :required="original.ethicsChoice === 'approved'"/>
+                  </label>
+                  <label>
+                    <span class="required">File number</span>
+                    <input type="text" x-model.trim="original.ethicsFileNumber" placeholder="Protocol / approval ID" :required="original.ethicsChoice === 'approved'"/>
+                  </label>
+                </div>
+              </fieldset>
+            </template>
+          </fieldset>
+          
+          <!-- COI -->
+          <fieldset>
+            <legend class="required">Conflicts of interest</legend>
+            <fieldset>
+              <label>
+                <input type="radio" name="originalCoi" value="none" x-model="original.coiChoice" :required="submission.type === 'original'"/>
+                The authors have no conflicts of interest to disclose
+              </label>
+              <label>
+                <input type="radio" name="originalCoi" value="disclose" x-model="original.coiChoice" />
+                Disclosure of potential competing interests
+              </label>
+            </fieldset>
+            <template x-if="original.coiChoice === 'disclose'">
+              <fieldset>
+                <label>
+                  <span class="required">Conflict of interest statement</span>
+                  <textarea x-model.trim="original.coiText" rows="3" placeholder="Describe any potential competing interests." :required="original.coiChoice === 'disclose'"></textarea>
+                </label>
+              </fieldset>
+            </template>
+          </fieldset>
+          
+        </section>
+      </fieldset>
+      
+      <!-- Validation -->
+      <fieldset>
+        <legend>Validation</legend>
+        
+        <!-- Matrix -->
+        <label>
+          <span class="required">Add validated <em>equine</em> matrix</span><span id="matrixInputHelper" style="padding-left: 10px; color: var(--pico-primary); font-style: italic; visibility: hidden;">Please add at least one validated matrix!</span>
+          <fieldset role="group">
+            <input type="text"
+            id="matrixInput"
+            x-model.trim="matrixNewName"
+            list="matrixOptions"
+            placeholder="Select or type (e.g., Blood plasma)" />
+            <button type="button" class="secondary" @click="addMatrix()" :disabled="!matrixNewName">
+              Add matrix
+            </button>
+          </fieldset>
+        </label>
+        
+        <datalist id="matrixOptions">
+          <template x-for="m in matrixChoices" :key="m">
+            <option :value="m"></option>
+          </template>
+        </datalist>
+        
+        <!-- Matrices list -->
+        <div>
+          <template x-for="(mx, mxIdx) in validation.matrices" :key="mx.id">
+            <article class="cardish">
+              <header class="add-list">
+                <div>
+                  <strong x-text="mx.name"></strong>
+                  <span class="muted">— Matrix</span>
+                </div>
+                <button type="button" class="contrast" @click="removeMatrix(mxIdx)">
+                  Remove matrix
+                </button>
+              </header>
+              <label>
+                Add validation metric
+                <fieldset role="group">
+                  <input type="text"
+                  x-model.trim="mx.metricNewType"
+                  list="metricChoices"
+                  placeholder="Select or type (e.g., Recovery)" />
+                  <button type="button" class="secondary" @click="addMetric(mx)" :disabled="!mx.metricNewType">
+                    Add metric
+                  </button>
+                </fieldset>
+              </label>
+              
+              <datalist id="metricChoices">
+                <template x-for="mx in metricChoices" :key="mx">
+                  <option :value="mx"></option>
+                </template>
+              </datalist>
+              
+              <!-- Metrics list -->
+              <div>
+                <template x-for="(met, metIdx) in mx.metrics" :key="met.id">
+                  <div class="cardish">
+                    <div class="add-list">
+                      <div>
+                        <strong x-text="met.type"></strong>
+                        <span class="muted">— Metric</span>
+                      </div>
+                      <button type="button" class="contrast" @click="removeMetric(mx, metIdx)">
+                        Remove
+                      </button>
+                    </div>
+                    <div class="grid">
+                      <label>
+                        Value
+                        <input type="number" x-model="met.value" step="any" placeholder="e.g., 7.2" />
+                      </label>
+                      <label>
+                        Unit
+                        <input type="text" x-model.trim="met.unit" placeholder="e.g., %, ng/mL, R²" />
+                      </label>
+                      <label>
+                        Comment
+                        <input type="text" x-model.trim="met.comment" placeholder="e.g., mean of 3 QC levels" />
+                      </label>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              
+              <div class="grid">
+                <label>
+                  <span class="required">Year of validation</span>
+                  <input type="number" min="1900" max='{{ "now" | date: "%Y" }}' x-model="mx.year" placeholder='{{ "now" | date: "%Y" }}' required/>
+                </label>
+                <label>
+                  <span class="required">Validation was</span>
+                  <select x-model="mx.outcome" required>
+                    <option value="" disabled>Select…</option>
+                    <option>Successful</option>
+                    <option>Unsuccessful</option>
+                    <option>Partially successful</option>
+                  </select>
+                </label>
+              </div>
+            </article>
+          </template>
+        </div>
+        <label>
+          Validation method
+          <textarea x-model.trim="validation.method" rows="3"
+          placeholder="The assay was used according to manufacturer instructions (https://www.example.com/assay-instructions.pdf). Please specify validation species if different from horse/pony."></textarea>
+        </label>
+      </fieldset>
+      
+      <!-- Additional information -->
+      <fieldset>
+        <legend>Additional information</legend>
+        <label>
+          Additional information on the assay
+          <textarea x-model.trim="additional.aboutAssay" rows="3"
+          placeholder="Any other details about the assay, known caveats, lot changes, etc."></textarea>
+        </label>
+        <label>
+          Additional information for review
+          <textarea x-model.trim="additional.forReview" rows="3"
+          placeholder="Anything you want the curators to consider (e.g., context, constraints)."></textarea>
+        </label>
+        <label>
+          Additional files
+          <input id="addFiles" type="file" style="margin-bottom: 0;" multiple/>
+        </label>
+      </fieldset>
+      
+      <!-- Agreements -->
+      <fieldset style="margin-bottom: calc(var(--pico-spacing) * 2);">
+        <legend>Confirmation</legend>
+        <label>
+          <input type="checkbox" x-model="agreements.openAccess" required />
+          <span class="required">I understand that all content submitted with this form will be openly accessible (email-addresses will be encrypted)</span>
+        </label>
+        <label>
+          <input type="checkbox" x-model="agreements.ccBy" required/>
+          <span class="required">I agree to publish the content submitted with this form under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license</span>
+        </label>
+      </fieldset>
+      
+      <!-- Submit -->
+      <div class="grid">
+        <button @click.prevent="preview();" type="submit" class="outline">Preview submission</button>
+        <button type="submit">Submit validation data</button>
+      </div>
+      
+      <details x-show="submissions.length > 0" style="margin-top: 1rem;" open>
+        <summary>Submission preview</summary>
+        {% include assay-cardview.html %}
+      </details>
+    </form>
+  </main>
+  
+  <script>
+    function cleanPayload(obj) {
+      if (obj === null || typeof obj !== 'object') return;
+      if (Array.isArray(obj)) {
+        for (const item of obj) {
+          cleanPayload(item);
+        }
+        return;
+      }
+      delete obj.id;
+      delete obj.metricNewType;
+      for (const key in obj) {
+        cleanPayload(obj[key]);
+      }
+    }
+
+    async function fetchDoiData(doi) {
+      const url = `https://doi.org/${doi}`;
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/vnd.citationstyles.csl+json'
+          }
+        });
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+        return await response.json();     
+      } catch (error) {
+        console.error('Failed to fetch DOI metadata:', error);
+      }
+    }
+
+    function mClone(obj) {
+      return JSON.parse(JSON.stringify(obj))
+    }
+    
+    function uid() {
+      return Math.random().toString(16).slice(2) + Date.now().toString(16);
+    }
+
+    function assayRegistryForm() {
+      return {
+        contributor: {
+          id: uid(),
+          firstName: "",
+          middleInitials: "",
+          lastName: "",
+          email: "",
+          affiliation: "",
+          orcid: ""
+        },
+        assay: {
+          target: "",
+          targetSpecies: "",
+          type: "",
+          manufacturer: "",
+          platform: "",
+          manufacturerRef: "",
+          url: "https://",
+          availability: ""
+        },
+        submission: {
+          type: ""
+        },
+        published: {
+          doi: "",
+          coiChoice: "none",
+          coiText: ""
+        },
+        original: {
+          isAuthor: false,
+          authorized: false,
+          authors: [],
+          authorOrder: [],
+          validAuthorOrder: "",
+          ethicsChoice: "notRequired",
+          ethicsApprovedBy: "",
+          ethicsFileNumber: "",
+          coiChoice: "none",
+          coiText: ""
+        },
+        validation: {
+          matrices: [],
+          method: ""
+        },
+        additional: {
+          aboutAssay: "",
+          forReview: ""
+        },
+        agreements: {
+          openAccess: false,
+          ccBy: false
+        },
+        submissions: [],
+        matrixChoices: [
+        "Whole blood",
+        "Blood plasma",
+        "Blood serum",
+        "Urine",
+        "Saliva",
+        "Tissue lysate",
+        "Synovial fluid",
+        "CSF"
+        ],
+        metricChoices: [
+        "Intra-assay CV",
+        "Inter-assay CV",
+        "Recovery",
+        "Dilutional linearity (R²)",
+        "Sensitivity",
+        "Cross-reactivity",
+        "Mean difference",
+        "Upper limit of agreement",
+        "Lower limit of agreement"
+        ],
+        get assayDesc() {
+          return [this.assay.manufacturer, this.assay.platform, this.assay.targetSpecies, this.assay.target, this.assay.type]
+          .filter(Boolean)
+          .join(' ')
+        },
+        matrixNewName: "",
+        get affiliationsList() {
+          const raw = [
+          this.contributor.affiliation,
+          ...this.original.authors.map(a => a.affiliation)
+          ].map(v => (v || "").trim()).filter(Boolean);
+          return Array.from(new Set(raw)).sort((a, b) => a.localeCompare(b));
+        },
+        addAuthor() {
+          this.original.authors.push({
+            id: uid(),
+            firstName: "",
+            middleInitials: "",
+            lastName: "",
+            email: "",
+            affiliation: ""
+          });
+        },
+        removeAuthor(idx) {
+          this.original.authors.splice(idx, 1);
+        },
+        addMatrix() {
+          const name = (this.matrixNewName || "").trim();
+          if (!name) return;
+          const exists = this.validation.matrices.some(m => m.name.toLowerCase() === name.toLowerCase());
+          if (exists) {
+            this.matrixNewName = "";
+            return;
+          }
+          this.validation.matrices.push({
+            id: uid(),
+            name,
+            metricNewType: "",
+            metrics: []
+          });
+          this.matrixNewName = "";
+        },
+        removeMatrix(idx) {
+          this.validation.matrices.splice(idx, 1);
+        },
+        addMetric(matrixObj) {
+          const type = (matrixObj.metricNewType || "").trim();
+          if (!type) return;
+          matrixObj.metrics.push({
+            id: uid(),
+            type,
+            value: "",
+            unit: "",
+            comment: ""
+          });
+          matrixObj.metricNewType = "";
+        },
+        removeMetric(matrixObj, idx) {
+          matrixObj.metrics.splice(idx, 1);
+        },
+        async buildPayload() {
+          this.assay.descriptor = this.assayDesc;
+          const payload = {
+            date: new Date().toUTCString(),
+            contributor: mClone(this.contributor),
+            assay: mClone(this.assay),
+            submissionType: mClone(this.submission.type),
+            submissionDetails: {},
+            validation: mClone(this.validation),
+            additional: mClone(this.additional),
+            addFiles: [...document.getElementById('addFiles').files].map(a => a.name.replace(/[^a-z0-9.\-_]/gi, '_'))
+          };
+          payload.contributor.email = await encrypt(this.contributor.email);
+          if (this.submission.type === "published") {
+            const doiData = await fetchDoiData(this.published.doi);
+            payload.submissionDetails = {
+              authors: doiData.author,
+              title: doiData.title,
+              doi: this.published.doi,
+              coi: this.published.coiChoice === "none"
+              ? "The authors and the contributor have no conflicts of interests to disclose."
+              : (this.published.coiText || "").trim()
+            };
+          }
+          if (this.submission.type === "original") {
+            const ao = Array.from(document.getElementById("authorlist").querySelectorAll("[data-uid]")).map(el => el.dataset.uid);
+            payload.submissionDetails = {
+              ethics: this.original.ethicsChoice === "approved"
+              ? { approvedBy: this.original.ethicsApprovedBy, fileNumber: this.original.ethicsFileNumber }
+              : { notRequired: true },
+              coi: this.original.coiChoice === "none"
+              ? "The authors have no conflicts of interests to disclose."
+              : (this.original.coiText || "").trim(),
+              authors: mClone(this.original.authors)
+            };
+            payload.submissionDetails.authors = await Promise.all(
+              payload.submissionDetails.authors.map(async (a) => {
+                a.email = await encrypt(a.email);
+                return a
+              })
+            );
+            payload.submissionDetails.authors = payload.submissionDetails.authors
+              .concat(payload.contributor)
+              .sort((a, b) => {
+                return ao.indexOf(a.id) - ao.indexOf(b.id) // sort according to author order (ao)
+              })
+              .filter(aut => aut.firstName != '')
+          }
+          cleanPayload(payload);
+          payload.id = `${uid()}_${this.assayDesc.replace(/[^a-z0-9.\-_]/gi, '_')}`;
+          return payload;
+        },
+        async preview() {
+          const mainform = document.getElementById('arf');
+          if (!mainform.reportValidity()) {return}
+          if (this.validation.matrices.length < 1) {
+            document.getElementById("matrixInputHelper").style.visibility = "visible";
+            document.getElementById("matrixInput").focus();
+            return
+          }
+          const payload = await this.buildPayload();
+          console.log(JSON.stringify(payload, null, 2));
+          this.submissions = [payload];
+        },
+        async submit() {
+          if (this.validation.matrices.length < 1) {
+            document.getElementById("matrixInputHelper").style.visibility = "visible";
+            document.getElementById("matrixInput").focus();
+            return
+          }
+          const payload = await this.buildPayload();
+          const formData = new FormData();
+          formData.append("data", JSON.stringify(payload));
+          const fileInput = document.getElementById('addFiles');
+          for (const file of fileInput.files) {
+            formData.append("files", file, file.name.replace(/[^a-z0-9.\-_]/gi, '_'));
+          }
+          const response = await fetch('/api/submit', {
+            method: 'POST',
+            body: formData 
+          });
+          const result = await response.json();
+          if (result.success) {
+            alert(`Success! View the PR here: ${result.pr_url}`);
+          } else {
+            alert(`Error: ${result.error}`);
+          }
+        }
+      };
+    }
+    
+    async function loadKey() {
+      const key = await fetch("./public_key.json")
+      .then(r => r.json());
+      return await window.crypto.subtle.importKey(
+        "jwk", key,
+        {name: "RSA-OAEP", hash: "SHA-256"},
+        true, ["encrypt"]
+      );
+    }
+    
+    const key = loadKey();
+    
+    async function encrypt(secret) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(secret);
+      const ciphertextBuffer = await window.crypto.subtle.encrypt(
+        { name: "RSA-OAEP" },
+        await key,
+        data
+      );
+      const ciphertextBytes = new Uint8Array(ciphertextBuffer);
+      return btoa(String.fromCharCode(...ciphertextBytes));
+    }
+  </script>
+  {% include footer.html %}
+</body>
+</html>
