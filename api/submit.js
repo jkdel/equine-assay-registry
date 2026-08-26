@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     const filesToUpdate = [];
     filesToUpdate[`_data/submissions/${sub.id}.json`] = JSON.stringify(sub, null, 2);
 
-    if (files.length > 0 && files.files.length>0) {
+    if (Object.keys(files).length > 0 && files.files.length>0) {
       for (const file of files.files) {
         filesToUpdate[`_data/supplementary/${sub.id}/${file.originalFilename.replace(/[^a-z0-9.\-_]/gi, '_')}`] = {
           content: fs.readFileSync(file.filepath, 'base64'),

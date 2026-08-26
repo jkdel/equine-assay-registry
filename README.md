@@ -56,11 +56,11 @@ The registry architecture supports FAIR data practices through:
 ## Deployment
 
 1. Fork this repository
-2. Create a Figshare token and add as github secret (FIGSHARE_TOKEN)
+2. Create a Figshare token and add as github secret (`FIGSHARE_TOKEN`)
 3. Add repository to vercel with Jekkyl framework
 4. Create a Github PAT token (Read and Write access to code and pull requests)
-   and add it to Vercel environment secrets as GITHUB_TOKEN alongside
-   GITHUB_REPO_OWNER and GITHUB_REPO_NAME
+   and add it to Vercel environment secrets as `GITHUB_TOKEN` alongside
+   `GITHUB_REPO_OWNER` and `GITHUB_REPO_NAME`
 5. Modify and test locally
     1. `git clone FORK_URL`
     2. `npm install`
