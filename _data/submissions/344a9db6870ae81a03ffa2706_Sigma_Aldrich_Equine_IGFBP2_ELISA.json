@@ -1,0 +1,86 @@
+{
+  "date": "Wed, 26 Aug 2026 21:29:13 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "ef9u+SNa03Skqf1NrPgbnRW1arlHrXCc/w+w+8PmmQ3K5LKKKt6tvjpWNRPeGUGGYjVNQCZ2lc2v6aTTA8M8sERbkEk5OoszIzM1Z6FIdnBVjolgHpO4kq3/Kpu/6V79UOGGAFkgNZTHilBqInpjVl1JztZ4YeRA1EXIhdYdvc4TTI65gBnc9FwipAxI/3SQzRvOVujxZjqU5FRBTK6L5xUxXFUEMBozuPwYkmVvyMTWWOltrkrNWAJlKLRM0UPNOiQ/lrfszuDqsL5C3JbdwzF4OcHXeIs+cEqv/TZqblIP7P/j7riJs4yb4PZ71gHxxma0VZV4yD+OUJ0+/ntf/Q==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "IGFBP2",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Sigma Aldrich",
+    "platform": "",
+    "manufacturerRef": "RAB1214",
+    "url": "https://www.sigmaaldrich.com/US/en/product/sigma/rab1214",
+    "availability": "Currently available",
+    "descriptor": "Sigma Aldrich Equine IGFBP2 ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State University",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "ef9u+SNa03Skqf1NrPgbnRW1arlHrXCc/w+w+8PmmQ3K5LKKKt6tvjpWNRPeGUGGYjVNQCZ2lc2v6aTTA8M8sERbkEk5OoszIzM1Z6FIdnBVjolgHpO4kq3/Kpu/6V79UOGGAFkgNZTHilBqInpjVl1JztZ4YeRA1EXIhdYdvc4TTI65gBnc9FwipAxI/3SQzRvOVujxZjqU5FRBTK6L5xUxXFUEMBozuPwYkmVvyMTWWOltrkrNWAJlKLRM0UPNOiQ/lrfszuDqsL5C3JbdwzF4OcHXeIs+cEqv/TZqblIP7P/j7riJs4yb4PZ71gHxxma0VZV4yD+OUJ0+/ntf/Q==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "CfLfqAQkZk3TFfFKZiD7IskVuRHRletPeK/di5SsH4ow9tlaqIopwjsz6GexYpy6FnjF0A2/e2gvhfi/lje6iJyPv7IAqoHUiFTcR95hNdy9vhUUOjEd/tZf44P2KyZyNv7Vw2IKPUrPi0dJo1J3EoeSgw/KeT8huqo/VB8bP760FFqNJPH8RvwUFvt8FJ+BkgPcNIbp0oizJeD8DNWodvCF6r3l0cost0M5Sl+VOArnjm4DywsCS4xND3fcjc5nvARNxk6qqn7KQFUcw+F53WSjgiDGS0HBuLq6O5gBfeOn41z5RPuQxTty71Nz4XH2j6Vv8ENWMt18IAw0Ws3Kug==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Recovery",
+            "value": "92.7",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.9987",
+            "unit": "R²",
+            "comment": ""
+          },
+          {
+            "type": "Recovery on addition",
+            "value": "100.7",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Successful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions, however, since the measured concentrations are above the upper limit of quantification, we recommend dilution of the samples at 1:50 to 1:100 with the assay diluent buffer provided in the kit."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "Equine_IGFBP2_Sigma_07_30_26.xlsx"
+  ],
+  "id": "344a9db6870ae81a03ffa2706_Sigma_Aldrich_Equine_IGFBP2_ELISA"
+}
