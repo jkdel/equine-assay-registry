@@ -1,6 +1,112 @@
+:root {
+  --pico-background-color: #fff ! important;
+  --pico-color: #373c44 ! important;
+  --pico-text-selection-color: rgba(2, 154, 232, 0.25) ! important;
+  --pico-muted-color: #646b79 ! important;
+  --pico-muted-border-color: rgb(231, 234, 239.5) ! important;
+  --pico-primary: #5d1725 !important;
+  --pico-primary-background: var(--pico-primary) !important;
+  --pico-primary-underline: var(--pico-primary) !important;
+  --pico-primary-hover: var(--pico-primary) !important;
+  --pico-primary-hover-background: var(--pico-primary) !important;
+  --pico-primary-focus: var(--pico-primary) !important;
+  --pico-contrast-hover-background: var(--pico-primary) !important;
+  --pico-contrast-inverse: #fff !important;
+  --pico-secondary-border: #c1c6c8 !important;
+  --pico-secondary-contrast: #777 !important;
+  --pico-nav-element-spacing-horizontal: 2rem !important;
+}
+
+body>header {
+  padding: 0 !important;
+  min-width: 150px;
+}
+
+footer {
+  font-size: small;
+  text-align: center;
+  min-height: 50px;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+#mhead {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  height: 180px;
+  max-height: 12vh;
+  background-color: #5d1725;
+  box-shadow: 0 2px 2px 1px #5d172560;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  height: 150px;
+  max-height: 10vh;
+  width: 588px;
+  max-width: 90%;
+  background-image: url("../images/cvm.png");
+  background-position: center;
+  background-size: contain;
+  margin: auto;
+}
+
+.no-underline,
+.no-underline:is(:hover, :focus, :active) {
+  --pico-text-decoration: none;
+}
+
+nav {
+  justify-content: center;
+  background: black;
+  line-height: 0.5;
+  box-shadow: 0 2px 2px 1px #00000060;
+}
+
+nav>ul>li>a {
+  color: white !important;
+  --pico-color: white !important;
+  --pico-underline: white !important;
+}
+
+.nav-current {
+  background: #333;
+}
+
+.container {
+  margin-top: max(20px, 3vh);
+}
+
+*:not(a)[title] {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--pico-color);
+  text-underline-offset: 3px;
+}
+
+.icon {
+  margin-left: 10px;
+  width: 25px;
+  vertical-align: center;
+}
+
+.detail-icons>a {
+  text-decoration: none;
+}
+
 .muted {
   opacity: 0.75;
   font-size: 0.95em;
+}
+
+#msearch {
+  --pico-border-radius: 0.25rem;
 }
 
 .cardish {
@@ -73,8 +179,10 @@ div.add-list {
   grid-row-gap: 0;
 }
 
-article>label>select,
-textarea:last-child, fieldset:last-child, fieldset:last-of-type {
+article > label > select,
+textarea:last-child,
+fieldset:last-child,
+fieldset:last-of-type {
   margin-bottom: 0;
 }
 
@@ -101,100 +209,6 @@ form > fieldset > legend {
   align-items: center;
   text-align: center;
   margin-top: 30px;
-}
-
-/* theme */
-/* Need to make sure this applies to all required elements because more specific rules apply unless theme is compiled with sass */
-:root {
-  --pico-background-color: #fff! important;
-  --pico-color: #373c44! important;
-  --pico-text-selection-color: rgba(2, 154, 232, 0.25)! important;
-  --pico-muted-color: #646b79! important;
-  --pico-muted-border-color: rgb(231, 234, 239.5)! important;
-  --pico-primary: #5d1725 !important;
-  --pico-primary-background: var(--pico-primary) !important;
-  --pico-primary-underline: var(--pico-primary) !important;
-  --pico-primary-hover: var(--pico-primary) !important;
-  --pico-primary-hover-background: var(--pico-primary) !important;
-  --pico-primary-focus: var(--pico-primary) !important;
-  --pico-contrast-hover-background: var(--pico-primary) !important;
-  --pico-contrast-inverse: #fff !important;
-  --pico-secondary-border: #c1c6c8 !important;
-  --pico-secondary-contrast: #777 !important;
-  --pico-nav-element-spacing-horizontal: 2rem !important;
-}
-
-#mhead {
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  height: 180px;
-  max-height: 12vh;
-  background-color: #5d1725;
-  box-shadow: 0 2px 2px 1px #5d172560;
-  /* box-shadow: 0 1px 1px 1px rgb(78.6892241379, 19.4607758621, 31.3064655172); */
-  /* text-align: center;
-  padding: max(10px, 1.5vh); */
-  align-items: center;
-  display: flex;
-}
-
-/* .logo {
-  width: 588px;
-  max-width: 90%;
-} */
-
-.logo {
-  height: 150px;
-  max-height: 10vh;
-  width: 588px;
-  max-width: 90%;
-  background-image: url("../images/cvm.png");
-  background-position: center;
-  background-size: contain;
-  margin: auto;
-}
-
-.banner {
-  height: 980px;
-  background: url(../images/banner_big.jpg);
-  background-position: center
-}
-
-.no-underline, .no-underline:is(:hover, :focus, :active) {
-  --pico-text-decoration: none;
-}
-
-nav {
-  justify-content: center;
-  background: black;
-  line-height: 0.5;
-  box-shadow: 0 2px 2px 1px #00000060;
-}
-
-nav > ul > li  > a {
-  color: white !important;
-  --pico-color: white !important;
-  --pico-underline: white !important;
-}
-
-.nav-current {
-  background: #333;
-}
-
-.container {
-  margin-top: max(20px, 3vh);
-}
-
-#msearch {
-  --pico-border-radius: 0.25rem;
-}
-
-*:not(a)[title] {
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: var(--pico-color);
-  text-underline-offset: 3px;
 }
 
 .aut-list {
@@ -233,29 +247,42 @@ ul.aut-list li:not(:last-child)::after {
   margin-bottom: var(--pico-typography-spacing-vertical);
 }
 
-body > header {
-  padding: 0 !important;
-  min-width: 150px;
+label {
+  position: relative;
 }
 
-footer {
-  font-size: small;
-  text-align: center;
-  min-height: 50px;
+.hint {
+  position: absolute;
+  right: 10px;
+  bottom: calc(var(--pico-form-element-spacing-vertical) + var(--pico-spacing) + 5px);
+  background: var(--pico-secondary-border);
+  margin: 0;
+  padding: 0;
+  text-decoration-line: none !important;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: bold !important;
+  cursor: pointer;
 }
 
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+.hint:hover, .hint:active, .hint:focus {
+  background: var(--pico-secondary-contrast);
+  --pico-box-shadow: none;
 }
 
-.icon {
-  margin-left: 10px;
-  width: 25px;
-  vertical-align: center;
+textarea + .hint {
+  bottom: unset;
+  top: calc(var(--pico-form-element-spacing-vertical) + var(--pico-spacing) + 12px);
 }
 
-.detail-icons > a {
-  text-decoration: none;
+input:has(+.hint) {
+  padding-right: 40px;
+}
+
+select + .hint {
+  right: 50px;
 }
