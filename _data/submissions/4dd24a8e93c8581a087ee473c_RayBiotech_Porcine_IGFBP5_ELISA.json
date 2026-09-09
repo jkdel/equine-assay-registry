@@ -73,7 +73,7 @@
         "year": "2026"
       }
     ],
-    "method": "Initially, the assay was performed according to the manufacturer’s instructions. However, because the measured optical density (OD) was too high, we optimized the assay by modifying three conditions. We also recommend diluting the samples from 1:2 to 1:16 using the assay diluent provided with the kit.\n\nThe following conditions were modified during optimization:\n\nSample incubation time: 1.5 hours instead of 2.5 hours\nHRP dilution: 1:300 instead of 1:120\nDetection antibody dilution: 1:300 instead of 1:80"
+    "method": "Initially, the assay was performed according to the manufacturer’s instructions. However, because the measured optical density was too high, we optimized the assay by modifying three conditions: (1) sample incubation time: 1.5 hours instead of 2.5 hours; (2) HRP dilution: 1:300 instead of 1:120; (3) detection antibody dilution: 1:300 instead of 1:80. We also recommend diluting the samples from 1:2 to 1:16 using the assay diluent provided with the kit."
   },
   "additional": {
     "aboutAssay": "",
