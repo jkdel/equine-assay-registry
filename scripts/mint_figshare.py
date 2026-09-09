@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import requests
+import time
 from requests.exceptions import HTTPError
 
 FIGSHARE_TOKEN = os.environ.get("FIGSHARE_TOKEN")
@@ -86,12 +87,10 @@ def upload_file(article_id, file_name):
     complete_upload(article_id, file_info['id'])
 
 def publish_article(article_id):
-    resp = requests.post(BASE_URL.format(endpoint=f"account/articles/{article_id}/publish"))
-    if resp.status_code == 202:
+    resp = requests.post(BASE_URL.format(endpoint=f"account/articles/{article_id}/publish"), headers=HEADERS)
+    if resp.status_code in [200, 201, 202]:
         time.sleep(3)
         resp = issue_request('GET', f"account/articles/{article_id}")
-    elif resp.status_code == 200:
-        pass
     else:
         resp.raise_for_status()
     return resp.get("doi")
