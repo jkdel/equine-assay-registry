@@ -10,7 +10,7 @@
   },
   "assay": {
     "target": "IGFBP2",
-    "targetSpecies": "equine",
+    "targetSpecies": "Equine",
     "type": "ELISA",
     "manufacturer": "RayBiotech",
     "platform": "",
@@ -76,7 +76,7 @@
     "method": "The assay was used according to manufacturer instructions, however, since the measured concentrations are above the upper limit of quantification, we recommend dilution of the samples at 1:50 to 1:100 with the assay diluent buffer provided in the kit."
   },
   "additional": {
-    "aboutAssay": "",
+    "aboutAssay": "Likely identical to Sigma Aldrich Equine IGFBP2 ELISA.",
     "forReview": ""
   },
   "addFiles": [
