@@ -1,0 +1,86 @@
+{
+  "date": "Wed, 09 Sep 2026 20:48:55 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "EWsUxyG4+AHf94utn7TrMf/ZAlxe2EgpeWPhPUHEc3CCv7yzhbMyslQSxUOdHZUTVBxfmrmLFJN3BRiT6z7VrES2xoDJwRG5ZuNS4PaXM6KyAHPF4yUmWn2BiwwGRQUCpgFAO8LZDQnIScMMV81Ll1w2sm9VM9g0ewziTVMu9H3UvVNek/w5GSIWLtCn+bFVcStuf0vJsd4slyLKSnXl/VZ8mj/fZV6FYCyfnpJOcWwNoxh8znHEPpw6BxPD1jglqWnnTE8ejc1q2tXuZQyNLA/oeFnrqXTBFPjIhsMKGmVqcd8jU/bTsItLGJd4tRI2xu4gvk2TO1aH4eCPBKMgOw==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "IGFBP5",
+    "targetSpecies": "Porcine",
+    "type": "ELISA",
+    "manufacturer": "RayBiotech",
+    "platform": "",
+    "manufacturerRef": "ELP-IGFBP5",
+    "url": "https://www.raybiotech.com/porcine-igfbp-5-elisa-kit-elp-igfbp5",
+    "availability": "Currently available",
+    "descriptor": "RayBiotech Porcine IGFBP5 ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State University",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "EWsUxyG4+AHf94utn7TrMf/ZAlxe2EgpeWPhPUHEc3CCv7yzhbMyslQSxUOdHZUTVBxfmrmLFJN3BRiT6z7VrES2xoDJwRG5ZuNS4PaXM6KyAHPF4yUmWn2BiwwGRQUCpgFAO8LZDQnIScMMV81Ll1w2sm9VM9g0ewziTVMu9H3UvVNek/w5GSIWLtCn+bFVcStuf0vJsd4slyLKSnXl/VZ8mj/fZV6FYCyfnpJOcWwNoxh8znHEPpw6BxPD1jglqWnnTE8ejc1q2tXuZQyNLA/oeFnrqXTBFPjIhsMKGmVqcd8jU/bTsItLGJd4tRI2xu4gvk2TO1aH4eCPBKMgOw==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "sW4BAx0Sx6UyUyTG1HUHx3axDuRWEr6oNbR6/rra0q58RvmWFkNiE+WnqIwxAyGwpDQU42WWw4/PoOMF7NBBxLzl6KFHEzp+W2pfTprv8rbfEpoewRLUFI/6gxioy8x2/lzxu3lTq1C6SlE5ayBgOqB6q2kGiWh9JKhsGCqw77sEByuA2Mu8W+hZSxQHLTm+kFRmVnwPrPqiR3KtUukb36neHm2M/G39BGwRO8I28aOWT4U2wV2yJP7h9R3oAqAZyXM+7qGnADdimXHzuhWbndD9iPGTlSt5h6HwpKYzg4WDsa5wRk28HCKhGz/HNTkVgW7dY5JLumrJszNmcSfukg==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.9939",
+            "unit": "R²",
+            "comment": ""
+          },
+          {
+            "type": "Recovery on dilution",
+            "value": "99.995",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "77.84",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "outcome": "Successful",
+        "year": "2026"
+      }
+    ],
+    "method": "Initially, the assay was performed according to the manufacturer’s instructions. However, because the measured optical density was too high, we optimized the assay by modifying three conditions: (1) sample incubation time: 1.5 hours instead of 2.5 hours; (2) HRP dilution: 1:300 instead of 1:120; (3) detection antibody dilution: 1:300 instead of 1:80. We also recommend diluting the samples from 1:2 to 1:16 using the assay diluent provided with the kit."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "Porcine_IGFBP5_Raybiotech_08_17_26.xlsx"
+  ],
+  "id": "4dd24a8e93c8581a087ee473c_RayBiotech_Porcine_IGFBP5_ELISA"
+}
