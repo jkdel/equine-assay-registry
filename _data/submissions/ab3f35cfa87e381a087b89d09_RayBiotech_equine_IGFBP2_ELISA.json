@@ -1,0 +1,86 @@
+{
+  "date": "Wed, 09 Sep 2026 19:50:18 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "SZMjy6hq/7V0uPPkVVsB0BeVyjtsmZD6nWy9LMON1kpMMRFNiagnHgKK1LAnk0YgNJQdJE0ExAjnttSU22ZGYBAyQ3tUPkv5Ly2ZFNtM163C0Wp8Pr/ffgDC/5AKqmoF74BHeidJNJqyIzwHu+elxbUyAXpTPbiq2fceBHzMgxhstEE336Dz0P6SirDV2ro4adS+89sljWoqjgOFwn5VuKdy6Ovsx9USHipj28IT8oCBxdnpYEH3qSzEXypzCZ11aP1b4kAGjijlbsEVXS5BCvWGbhb2TxaXZuUEMa89jCj5rdrUANNySPwFIQU1GFCnhzWWWSynevEU7dgIrLUslw==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "IGFBP2",
+    "targetSpecies": "equine",
+    "type": "ELISA",
+    "manufacturer": "RayBiotech",
+    "platform": "",
+    "manufacturerRef": "ELE-IGFBP2",
+    "url": "https://www.raybiotech.com/equine-igfbp-2-elisa-kit-ele-igfbp2",
+    "availability": "Currently available",
+    "descriptor": "RayBiotech equine IGFBP2 ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State University",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "SZMjy6hq/7V0uPPkVVsB0BeVyjtsmZD6nWy9LMON1kpMMRFNiagnHgKK1LAnk0YgNJQdJE0ExAjnttSU22ZGYBAyQ3tUPkv5Ly2ZFNtM163C0Wp8Pr/ffgDC/5AKqmoF74BHeidJNJqyIzwHu+elxbUyAXpTPbiq2fceBHzMgxhstEE336Dz0P6SirDV2ro4adS+89sljWoqjgOFwn5VuKdy6Ovsx9USHipj28IT8oCBxdnpYEH3qSzEXypzCZ11aP1b4kAGjijlbsEVXS5BCvWGbhb2TxaXZuUEMa89jCj5rdrUANNySPwFIQU1GFCnhzWWWSynevEU7dgIrLUslw==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "lstR2i3pwLdBgjfQK+ukGJ/77tVa8Ej8oDMDfEKL4Gd0aRYV9V8Iebff6MTqqrZmwWAAShlR/MJLN/JmQ/jlT3BaFnJE2Gj7S7R5kUfDlK7+8UPA/SCEae1PAfdemHM0yWjP8+3NdIvIO1MvHwSWTJCHu9fjN0a8t8LBS/GHxOgGJCQkKUolTOO6H2/fFqBhVEGDcLFxq+KedtTZBkZTeCOXqDh1NESqxiNYWDtSRXU20/hG4CWaA4rQQD0Wo6Mc9yzICqEUCROhHg4zf6yVhOZQ+I643IE4pyYuP9bvArjrvJO4lqTM5up+Xj9ykT8ERF1I+giLE1oN/lOn3RilVw==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Recovery on dilution",
+            "value": "103.6795",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.9986",
+            "unit": "R²",
+            "comment": ""
+          },
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "114.7922",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "outcome": "Successful",
+        "year": "2026"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions, however, since the measured concentrations are above the upper limit of quantification, we recommend dilution of the samples at 1:50 to 1:100 with the assay diluent buffer provided in the kit."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": ""
+  },
+  "addFiles": [
+    "Equine_IGFBP2_RayBiotech_08_10_26.xlsx"
+  ],
+  "id": "ab3f35cfa87e381a087b89d09_RayBiotech_equine_IGFBP2_ELISA"
+}
