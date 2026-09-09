@@ -17,7 +17,7 @@
     "manufacturerRef": "ELE-IGFBP2",
     "url": "https://www.raybiotech.com/equine-igfbp-2-elisa-kit-ele-igfbp2",
     "availability": "Currently available",
-    "descriptor": "RayBiotech equine IGFBP2 ELISA"
+    "descriptor": "RayBiotech Equine IGFBP2 ELISA"
   },
   "submissionType": "original",
   "submissionDetails": {
@@ -43,7 +43,8 @@
         "affiliation": "Mississippi State University",
         "orcid": "0000-0002-2820-8431"
       }
-    ]
+    ],
+    "doi": "https://doi.org/10.6084/m9.figshare.33507676"
   },
   "validation": {
     "matrices": [
