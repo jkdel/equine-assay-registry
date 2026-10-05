@@ -1,0 +1,74 @@
+{
+  "date": "Mon, 05 Oct 2026 17:52:23 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "YV7vc5g8cCngsBWivJBwHSQ06EefJ5oDe6eUoCJ/3d+jUmsREgcTqQfT3zIWjlnVUaFeywxzcS+etpuK95pR509PA5GLSq65qccNPLJXiGP+Oo/2mwmBWmNH5Dtqr7ROX51uU2MxriqOnE40W0QmKLY6MdQmi+bpu+W1NKIL9EqVcNchhSS01qW2WRSYgIA6Y8dSXgu5jNRSXqDAKut/aXBiuuprnedcOxUNec6gsm45Xlzmq83TBLJcvVh09TJueopUI+T00UquV6QIzjphEwhiyVYi9D1RZn72Pak2QjFRmvPDUmeT5uXX45oTWCq3l9pNGQkEp/lEESI84vHwvg==",
+    "affiliation": "Mississippi State University",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Leptin",
+    "targetSpecies": "Human",
+    "type": "ELISA",
+    "manufacturer": "Invitrogen",
+    "platform": "",
+    "manufacturerRef": "KAC2281",
+    "url": "https://www.thermofisher.com/elisa/product/Human-Leptin-ELISA-Kit/KAC2281",
+    "availability": "Currently available",
+    "descriptor": "Invitrogen Human Leptin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State University",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "YV7vc5g8cCngsBWivJBwHSQ06EefJ5oDe6eUoCJ/3d+jUmsREgcTqQfT3zIWjlnVUaFeywxzcS+etpuK95pR509PA5GLSq65qccNPLJXiGP+Oo/2mwmBWmNH5Dtqr7ROX51uU2MxriqOnE40W0QmKLY6MdQmi+bpu+W1NKIL9EqVcNchhSS01qW2WRSYgIA6Y8dSXgu5jNRSXqDAKut/aXBiuuprnedcOxUNec6gsm45Xlzmq83TBLJcvVh09TJueopUI+T00UquV6QIzjphEwhiyVYi9D1RZn72Pak2QjFRmvPDUmeT5uXX45oTWCq3l9pNGQkEp/lEESI84vHwvg==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "AzvqhJw+7wGHBlS2Lxh6nw5BM4sLXT4RjzeNqUoL6X8JCuzh4Gsq5LnCITgrH2liQh08tCoLgRqletGro8c4AyotSAKqk1+p9UpbVBRWavutRo59WOb1WuGez/gQjqSMWDUQYtfx+9wqA+P7kD8Xx6FoCrUn3XvNQQfT/m836vjZcP++L3ZiQskbtkzHqq2s8EV5q448FprOkK5JbsdHXswFk/JN3kZPODy81diYt7edhIwzH4i5WY1gn9nDSwOUxdqLd4IPj7w8b4patKlzLiPg0lWBHJN1ZTXHIBv7ls2mNNZl5qwN6ifPTCJrHJRc/zgbgcHYRPpkecdGY9qiUA==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.93",
+            "unit": "R²",
+            "comment": ""
+          }
+        ],
+        "outcome": "Unsuccessful",
+        "year": "2026"
+      }
+    ],
+    "method": "The assay was used according to the manufacturing instructions."
+  },
+  "additional": {
+    "aboutAssay": "Dilutions between 1:50 and 1:100 showed a trend toward acceptable linearity, while dilutions below 1:50 showed a clear matrix effect. At dilutions greater than 1:100, leptin was no longer reliably detected by the kit. Spike recovery was good (~80%) within the 1:50 to 1:100 dilution range. Although results initially appeared promising in that dilution range, the high dilution and relatively low sensitivity greatly limit usability for consistent measurement of leptin in horse serum. As a result, we considered this assay unsuitable for measurement of leptin in equine serum.",
+    "forReview": ""
+  },
+  "addFiles": [
+    "Human_Leptin_Invitrogen.xlsx"
+  ],
+  "id": "7fca60a55cb6c1a10d320050_Invitrogen_Human_Leptin_ELISA"
+}
