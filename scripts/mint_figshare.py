@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import requests
+import sys
 import time
 from requests.exceptions import HTTPError
 
@@ -27,7 +28,7 @@ def raw_issue_request(method, url, data=None, binary=False):
         except ValueError:
             data = response.content
     except HTTPError as error:
-        raise ValueError(error.message)
+        raise ValueError(f"{error} - {response.text}") from error
     return data
 
 def issue_request(method, endpoint, *args, **kwargs):
