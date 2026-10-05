@@ -53,7 +53,7 @@
           {
             "type": "Dilutional linearity (R²)",
             "value": "0.93",
-            "unit": "R2",
+            "unit": "R²",
             "comment": ""
           }
         ],
@@ -64,7 +64,7 @@
     "method": "The assay was used according to the manufacturing instructions."
   },
   "additional": {
-    "aboutAssay": "We tested this assay four times to validate this kit for measuring leptin in horse serum. Dilutions between 1:50 and 1:100 showed a trend toward acceptable linearity, while dilutions below 1:50 showed a clear matrix effect. At dilutions greater than 1:100, leptin was no longer reliably detected by the kit. Spike recovery was good (~80%) within the 1:50 to 1:100 dilution range.\n\nAlthough the results initially appeared promising within this narrow dilution range, the assay did not provide a sufficiently reliable working range for consistent measurement of leptin in horse serum. After four validation attempts, we decided to reject this kit for measuring leptin in equine serum.",
+    "aboutAssay": "Dilutions between 1:50 and 1:100 showed a trend toward acceptable linearity, while dilutions below 1:50 showed a clear matrix effect. At dilutions greater than 1:100, leptin was no longer reliably detected by the kit. Spike recovery was good (~80%) within the 1:50 to 1:100 dilution range. Although results initially appeared promising in that dilution range, the high dilution and relatively low sensitivity greatly limit usability for consistent measurement of leptin in horse serum. As a result, we considered this assay unsuitable for measurement of leptin in equine serum.",
     "forReview": ""
   },
   "addFiles": [],
