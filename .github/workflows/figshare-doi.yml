@@ -7,6 +7,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: figshare-doi
+  cancel-in-progress: false
+
 jobs:
   mint-and-update-doi:
     # Only run if the PR was merged AND has the 'doi' label
@@ -19,7 +23,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,7 +37,7 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          echo CHANGED_FILES=$(git diff --name-only --diff-filter=A ${{ github.event.pull_request.base.sha }} ${{ github.sha }}) >> $GITHUB_ENV
+          echo CHANGED_FILES=$(git diff --name-only --diff-filter=A ${{ github.event.pull_request.merge_commit_sha }}^1 ${{ github.event.pull_request.merge_commit_sha }}) >> $GITHUB_ENV
 
       - name: Run Figshare Minting Script
         env:
