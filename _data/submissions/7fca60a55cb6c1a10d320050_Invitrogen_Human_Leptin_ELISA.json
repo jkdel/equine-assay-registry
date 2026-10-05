@@ -67,6 +67,8 @@
     "aboutAssay": "Dilutions between 1:50 and 1:100 showed a trend toward acceptable linearity, while dilutions below 1:50 showed a clear matrix effect. At dilutions greater than 1:100, leptin was no longer reliably detected by the kit. Spike recovery was good (~80%) within the 1:50 to 1:100 dilution range. Although results initially appeared promising in that dilution range, the high dilution and relatively low sensitivity greatly limit usability for consistent measurement of leptin in horse serum. As a result, we considered this assay unsuitable for measurement of leptin in equine serum.",
     "forReview": ""
   },
-  "addFiles": [],
+  "addFiles": [
+    "Human_Leptin_Invitrogen.xlsx"
+  ],
   "id": "7fca60a55cb6c1a10d320050_Invitrogen_Human_Leptin_ELISA"
 }
