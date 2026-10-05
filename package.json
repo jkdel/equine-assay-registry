@@ -6,7 +6,7 @@
     "@octokit/rest": "^22.0.1",
     "formidable": "^3.5.4",
     "octokit-plugin-create-pull-request": "^6.0.1",
-    "vercel": "^59.0.0"
+    "vercel": "^61.0.0"
   },
   "allowScripts": {
     "esbuild@0.27.0": true
