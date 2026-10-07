@@ -1,0 +1,74 @@
+{
+  "date": "Wed, 07 Oct 2026 16:43:22 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "hIUgo5IS/jVJh0l6R6OOGk6ftK+MTyiQImFeZ7D9RfDQ7tZcNfkBvBWt1x57ipvDL9bBppX8lZnCSk2WmNC75p5eZ3UDClwQCo2MblIlnCzTlwqZGtvXHeFt7kHU/R95uv8AporiiAJiRibPLhApXuA48GBXTNbM5LLzVfB0B4OWUg2zB516841+MHrIK3WLuSkpmgvX8ozAtIg35wnnlj+67qw2PSchuOveWwfF7XKH5qAyMIiUSDCORSZG7DBbNHYfdzxIq5f+rmgpaArmJQGFbXK4kDRn6xACwyyYXeZgYDtpV59BX6cmdtG1zJLh6IPhCKlDUBn8tmnBwF4XpQ==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Leptin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "Novus Biological",
+    "platform": "",
+    "manufacturerRef": "NBP3-42562",
+    "url": "https://www.rndsystems.com/products/leptin-ob-elisa-kit_nbp3-42562",
+    "availability": "Currently available",
+    "descriptor": "Novus Biological Equine Leptin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "hIUgo5IS/jVJh0l6R6OOGk6ftK+MTyiQImFeZ7D9RfDQ7tZcNfkBvBWt1x57ipvDL9bBppX8lZnCSk2WmNC75p5eZ3UDClwQCo2MblIlnCzTlwqZGtvXHeFt7kHU/R95uv8AporiiAJiRibPLhApXuA48GBXTNbM5LLzVfB0B4OWUg2zB516841+MHrIK3WLuSkpmgvX8ozAtIg35wnnlj+67qw2PSchuOveWwfF7XKH5qAyMIiUSDCORSZG7DBbNHYfdzxIq5f+rmgpaArmJQGFbXK4kDRn6xACwyyYXeZgYDtpV59BX6cmdtG1zJLh6IPhCKlDUBn8tmnBwF4XpQ==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "J494ldwZngdvgm9ii3cbVj3Jq6VeNShfQ+JNVLn6hR5sy8INg9cCUpBuxBDKN4CWK7tvcM5tD9AFMCMEqAdpyEgLLoW390HhWYCRg1So03Rnf87nLXXZZt/mRVLolQ6D4FvXBnr6F5X29FaHEj7JjYuLDP874p41cjjg62XOPz+N/0W8aPsrIt0F0i9dAj7AnzbCPHV9jkqCziCV+Ip8XkZ5UyfCz+yik0adxcOcXEiY9PX/r9U7jE3HHY/muMZQZ0g1oSjkWky/yisyQdHSxDjgMb1eVokd0lUKCKAZOKB9l9v3Nilcx9Rbk3nGQL56OcZbl30SOmqyBqVGjWpIpQ==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0",
+            "unit": "R2",
+            "comment": "No signal has been detected across the dilutions."
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "The kit is functional as the standard curve looks good and is within the expected range. However, there is a clear matrix effect in the sample. In regular serum sample nothing is detected except 1:64 dilution. On the other hand,  in the ethanol-extracted samples, it looks the conc are increased with the dilution. Lower dilutions were affected by matrix interference, while higher dilutions resulted in signals below the kit’s detection limit."
+  },
+  "addFiles": [
+    "Equine_Leptin_NovusBiological_09_10_26.xlsx"
+  ],
+  "id": "86c27980a5df181a1173f88a2_Novus_Biological_Equine_Leptin_ELISA"
+}
