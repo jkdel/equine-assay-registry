@@ -1,0 +1,80 @@
+{
+  "date": "Wed, 07 Oct 2026 15:06:07 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "QarUfhmG2Ko1uK8ERHho0cES5BiJcjzQaGlTD3ACA0pgDEYzBAsch4Ab8lQCCylA5as0rm2XI+uLTVC9ctI6Qi2B4v8YSUjwdYIf0VTdDIZlda24xXcYLVomKzJ/IDTDE0uKcJrASxeJY0LpMJImxqX4PdYTfv1PZL/e6e0GFft5dP4AYQEmLJTxIssAwsZTJWxS4Uqn/s8TdPl9msB2Y9/B+AxjsmvTAZ604VI1NkqN7kS2J6DQ2BM5UCPTK1o3vyjHMiO4ixj19EDZgSXzrk8I/i1/1Bcxhfe7FAW3kBJrSCdAuIsk57aEvnOIUmCz+VItFKzzOG97yPuYm3ITeg==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Leptin",
+    "targetSpecies": "Human",
+    "type": "ELISA",
+    "manufacturer": "Sigma Millipore",
+    "platform": "",
+    "manufacturerRef": "EZHL-80SK",
+    "url": "https://www.sigmaaldrich.com/US/en/product/mm/ezhl",
+    "availability": "Currently available",
+    "descriptor": "Sigma Millipore Human Leptin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "QarUfhmG2Ko1uK8ERHho0cES5BiJcjzQaGlTD3ACA0pgDEYzBAsch4Ab8lQCCylA5as0rm2XI+uLTVC9ctI6Qi2B4v8YSUjwdYIf0VTdDIZlda24xXcYLVomKzJ/IDTDE0uKcJrASxeJY0LpMJImxqX4PdYTfv1PZL/e6e0GFft5dP4AYQEmLJTxIssAwsZTJWxS4Uqn/s8TdPl9msB2Y9/B+AxjsmvTAZ604VI1NkqN7kS2J6DQ2BM5UCPTK1o3vyjHMiO4ixj19EDZgSXzrk8I/i1/1Bcxhfe7FAW3kBJrSCdAuIsk57aEvnOIUmCz+VItFKzzOG97yPuYm3ITeg==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "P4PJ/NpPp4WtZydASunE7BCoW0WCN9YkDX0Vy2n1GgfBq3Z4Ju5acaVL0FJtnQlRLDNQCMQs+bfjMIxtFohZO1wOd1PAQhnR/D53vFTp9w4o1aEyxZA+ndYqO2JFaw6uxy5PS4DUP5O55KGgvO1vCtcK5c8iiJaPuf+TMrA6TsK+SM28Ndl1pjYqO3ufjRxhaxbRYIRPPyWXMHqgG8ugVHzQDoBU9gvDwDF5S9qD+rRFcYiCUpGFvqiL3QY0g2GrDeg70u4CJ5UxyW08DmwOMsJXkCtGd7lzGqdhkpKvbuSrJeKnpDQq/4NNF53wQWMhN7nS1GT8664MZ1EOc7Q3RQ==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.00",
+            "unit": "R2",
+            "comment": ""
+          },
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "87.14",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "The kit is functional as the standard curve looks good, and the QC samples is within the expected range. However, it did not detect any of the either regular or ethanol-extracted serum samples. The spike recovery for both regular and ethanol-extracted samples ~87%. I don't think it is matrix effect. I think the coated antigen has limitation to bind equine serum leptin as this kit is designed for the detection of human blood leptin."
+  },
+  "addFiles": [
+    "Human_Leptin_MilliporeSigma_09_15_2026.xlsx"
+  ],
+  "id": "61eed3e5ae7cd1a116e68289_Sigma_Millipore_Human_Leptin_ELISA"
+}
