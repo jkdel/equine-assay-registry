@@ -1,0 +1,80 @@
+{
+  "date": "Wed, 07 Oct 2026 19:33:39 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "gVdX4HSeZ+tmAhMoTU3I7Kcg0tG0iklFsQWiILot2srhnMallQiUJEEwOeFb5wFLKyYoEQBVKTu1YZ7APCtQDEgSn3VtL2roeymn+vbsATExP7SIf1mFMS4L0nYpYIlrHRMROxHr3QKhXRuUMd8hGBZR0n1l4XxgDKOo8mSoBwOEl0SZG4rtogN3llk5pN1hbVuAdJA11kTeo9eruBeGfQnSBD8Z7xPjXXonemk2Nuxw4eYrwohLqcnoqMj4naBs+43UASMHJazX2eil7epnMJbAh9myfO3OV4tb6+yuJKaalsDl0GlAUnRCjL+DMBGfBypmyssAbV5oqBsbQiz3sQ==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Leptin",
+    "targetSpecies": "Horse",
+    "type": "ELISA",
+    "manufacturer": "BIOMATIK",
+    "platform": "",
+    "manufacturerRef": "EKC32359",
+    "url": "https://biomatik.com/search?type=product&q=ekc32359",
+    "availability": "Currently available",
+    "descriptor": "BIOMATIK Horse Leptin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "gVdX4HSeZ+tmAhMoTU3I7Kcg0tG0iklFsQWiILot2srhnMallQiUJEEwOeFb5wFLKyYoEQBVKTu1YZ7APCtQDEgSn3VtL2roeymn+vbsATExP7SIf1mFMS4L0nYpYIlrHRMROxHr3QKhXRuUMd8hGBZR0n1l4XxgDKOo8mSoBwOEl0SZG4rtogN3llk5pN1hbVuAdJA11kTeo9eruBeGfQnSBD8Z7xPjXXonemk2Nuxw4eYrwohLqcnoqMj4naBs+43UASMHJazX2eil7epnMJbAh9myfO3OV4tb6+yuJKaalsDl0GlAUnRCjL+DMBGfBypmyssAbV5oqBsbQiz3sQ==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "MDUNmQiVBZrFZviK1cBEahtSbDP14UJSu/a7v0NlKiZ9ZYeoW8PPt2sH4O+XmkTPY2szs7bJK0Eskuv5P+4GeRovp6ZTGQvNgm6yustuKX8xvcEwYKBUAUL4Y3CmPJCDvty+ckPi/cG9qo/c1rxnj0/eFHcOf0FiEZC9SKW/DGmVsFsZGEw0tfOk/5JGupA6iebkIiq6REyQM6ZTgi1N39JmCvXqHPpUVWLM6SO00CTpvm+XY0TPbOWosLvoEEsPCU9HB3QfEXs+oEaMgK5G4nosc60A/M/qxHrwmqvrQNDPJAYxU0Z8Nj02GVVBYo+M0sApGeD8I1k3CbGSVMRsVg==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.9305",
+            "unit": "R2",
+            "comment": ""
+          },
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "82.13",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "The standard curve was acceptable, but we are not satisfied with the kit's performance because the OD values were much lower than expected. Since the manufacturer recommends a 1:500 sample dilution, we tested several dilutions around this range to see how the kit performed. The spike recovery was reasonably good (~82.13%), but unfortunately, the dilution linearity was very poor. Based on these results, we are not confident that this kit can reliably measure leptin in equine serum."
+  },
+  "addFiles": [
+    "Horse_Leptin_Biomatik.xlsx"
+  ],
+  "id": "e3d22704cd31f1a117db7140_BIOMATIK_Horse_Leptin_ELISA"
+}
