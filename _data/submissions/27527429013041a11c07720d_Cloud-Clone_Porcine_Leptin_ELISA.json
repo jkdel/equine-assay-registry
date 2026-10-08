@@ -1,0 +1,74 @@
+{
+  "date": "Thu, 08 Oct 2026 15:00:12 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "OvtemcTMZoL8yu09lNbZFHHgvD8d3Dhi+97M8kx79wabymJVOdxLrNiKXtPDyy+GL2uyi4D3FeKImBVMo3onUW8/iD2ZIufBJ8/mXzoPtyZDdB3BgbJVwfuxpmECD68H9z9CkgC5I/5K6lujOszl/nWSGLBUh0LeCZpHMBVG9ogAilIKhSxhldt40taILhVwbSFyaksQxP6kAdbs8xqUyIgwPckpf+xFwgc4W3Wyz94ON2OSCw361QQlAvkjjeGFjn0AmQsopxeN5NCkQLqPSJFRpDX6EaVB4QTNRhVefjhkzSda765B8cIbKmZBcAJ3DQu6+KxNe9+cNOZjlB12Vw==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Leptin",
+    "targetSpecies": "Porcine",
+    "type": "ELISA",
+    "manufacturer": "Cloud-Clone",
+    "platform": "",
+    "manufacturerRef": "SEA084Po",
+    "url": "https://www.cloud-clone.com/Search/search.html?keywords=SEA084Po&type=5&specie=Po&c=0",
+    "availability": "Currently available",
+    "descriptor": "Cloud-Clone Porcine Leptin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "OvtemcTMZoL8yu09lNbZFHHgvD8d3Dhi+97M8kx79wabymJVOdxLrNiKXtPDyy+GL2uyi4D3FeKImBVMo3onUW8/iD2ZIufBJ8/mXzoPtyZDdB3BgbJVwfuxpmECD68H9z9CkgC5I/5K6lujOszl/nWSGLBUh0LeCZpHMBVG9ogAilIKhSxhldt40taILhVwbSFyaksQxP6kAdbs8xqUyIgwPckpf+xFwgc4W3Wyz94ON2OSCw361QQlAvkjjeGFjn0AmQsopxeN5NCkQLqPSJFRpDX6EaVB4QTNRhVefjhkzSda765B8cIbKmZBcAJ3DQu6+KxNe9+cNOZjlB12Vw==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "lSctr9MO5lkofIwYCiCVlD0WcE3nB1v+qITd0GQMpgc3nAlqOB+28QW1o/gDHglFVZZZTToXCZ8jU3SvS2Zedu+ebCV475dzQVwjs2mDn/mOV9N7zs+kY7pGgMj242e4SXqgAceNDrm8z5iPhpUdwuPw/IxR51WnWBZi+yeiHe7WWgPdGK9qw5AXSviKY3+C6l5tc/C+K2v2SvIwSaY36NGaNNwKNVMXWjI9XXu9esqO6vtGHvj4hKH+xmDRACeYNQdzFguGQEu4z6/EGCi/xjdZ8aKjns4XR06wvUJMQmA7iM1pNBUOtr9QfcvCi3TrNOZ9TmsBztxQJT0UO7z5Ig==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "47.265",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "The kit is functional as the standard curve looks good. However, it did not detect any of the either regular or ethanol-extracted serum samples. The spike recovery is below 50%.\nIt appears there is a matrix effect, and the coated antigen may be limited in binding equine serum leptin, as this kit is designed to detect porcine leptin. \n\nBased on these results, we are not confident that this kit can reliably measure leptin in equine serum."
+  },
+  "addFiles": [
+    "Porcine_Leptin_CloudClone_08_27_26.xlsx"
+  ],
+  "id": "27527429013041a11c07720d_Cloud-Clone_Porcine_Leptin_ELISA"
+}
