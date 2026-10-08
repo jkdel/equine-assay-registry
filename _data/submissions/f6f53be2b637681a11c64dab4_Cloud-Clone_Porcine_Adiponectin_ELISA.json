@@ -1,0 +1,80 @@
+{
+  "date": "Thu, 08 Oct 2026 16:42:14 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "ZhvXAyh3cFuvBlSWb2T645yoGiT22VEDSOjbCC0tZNE90NtixnG45Bgg8RKc4KuDSG9gHcFQc51ZwB3U/bV5lIQf5Q/Ef8hO4thwVlapA5vuFwfxQX0AkwcscqhEQmXQoosAZ8++3g4dxk70MbwiUXXQo6XX92fSW7Pk9m5HwjCQGt5XTtsIhzkVKkOULrZ79UYyoVz/o3rSkSjGLLVvL8j9AvMOrAkzilZOXeQxj5GnIH/KyWtTFct9qbS9t3eJZWyzay/Zqe/jE1U65I3EBopurN1kxkkkvkNSpysXWNQDfFqrDYwGb8AspYuHdG0PJAZbfDPQOTXvvlQN8HnA7Q==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Adiponectin",
+    "targetSpecies": "Porcine",
+    "type": "ELISA",
+    "manufacturer": "Cloud-Clone",
+    "platform": "",
+    "manufacturerRef": "SEA605Po",
+    "url": "https://www.cloud-clone.com/Search/search.html?keywords=SEA605Po&type=5&specie=Po&c=0",
+    "availability": "Currently available",
+    "descriptor": "Cloud-Clone Porcine Adiponectin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "ZhvXAyh3cFuvBlSWb2T645yoGiT22VEDSOjbCC0tZNE90NtixnG45Bgg8RKc4KuDSG9gHcFQc51ZwB3U/bV5lIQf5Q/Ef8hO4thwVlapA5vuFwfxQX0AkwcscqhEQmXQoosAZ8++3g4dxk70MbwiUXXQo6XX92fSW7Pk9m5HwjCQGt5XTtsIhzkVKkOULrZ79UYyoVz/o3rSkSjGLLVvL8j9AvMOrAkzilZOXeQxj5GnIH/KyWtTFct9qbS9t3eJZWyzay/Zqe/jE1U65I3EBopurN1kxkkkvkNSpysXWNQDfFqrDYwGb8AspYuHdG0PJAZbfDPQOTXvvlQN8HnA7Q==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "pveDikYI6DIvNeJP6T22knsI826YyMBsLfRipw6PCZdxYp603xA5dWBtkQKAvv05wbFto0u0JapVrHDldd8W0Y3uwxeUrmhFKML3ZcaUxRsGh87lBN6co/XBhB2L5unKqXZyQrVOeeQpHarvVIdRmRBGNqw6uG2kQXSdGIXWrXPkUnC75SxCfQ2QdCAtIQRUpZbgny4U48Z68dniOg2GKKwC9eqRd0OLW1OfGU32SFDPc7AiVKt35aYtIWjNCMUbLaNDT7Eff/jyXiQuzkToom7/ymr2gowHFPN3qKXG1fViwr6hct1mbowGk+b7FVJqYkhbTbOVU57FpHajNr+U0g==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "108.67",
+            "unit": "%",
+            "comment": "on average"
+          },
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.00",
+            "unit": "R2",
+            "comment": "No measurable signal was detected in the samples"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "The kit is functional as the standard curve looks good. However, it was unable to detect adiponectin in either regular serum or ethanol-extracted samples at any of the tested dilutions. The spike recovery was good (~108.67%), suggesting that matrix interference is unlikely to be the main problem. Since the kit is designed for porcine adiponectin, its antibodies may not recognize equine adiponectin effectively, which could explain the lack of detection.\n\nBased on these results, we are not confident that this kit can reliably measure adiponectin in equine serum.\n\nNote: It shows similar results for \"Novus Biological Porcine adiponectin ELISA\" (Cat# NBP3-42263 )"
+  },
+  "addFiles": [
+    "Porcine_Adiponectin_CloudClone_09_23_26.xlsx"
+  ],
+  "id": "f6f53be2b637681a11c64dab4_Cloud-Clone_Porcine_Adiponectin_ELISA"
+}
