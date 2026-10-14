@@ -22,7 +22,7 @@
   "submissionType": "original",
   "submissionDetails": {
     "ethics": {
-      "approvedBy": "Mississippi State Univerty",
+      "approvedBy": "Mississippi State University",
       "fileNumber": "IACUC-25-506"
     },
     "coi": "The authors have no conflicts of interests to disclose.",
@@ -32,7 +32,7 @@
         "middleInitials": "",
         "lastName": "Afsar",
         "email": "QarUfhmG2Ko1uK8ERHho0cES5BiJcjzQaGlTD3ACA0pgDEYzBAsch4Ab8lQCCylA5as0rm2XI+uLTVC9ctI6Qi2B4v8YSUjwdYIf0VTdDIZlda24xXcYLVomKzJ/IDTDE0uKcJrASxeJY0LpMJImxqX4PdYTfv1PZL/e6e0GFft5dP4AYQEmLJTxIssAwsZTJWxS4Uqn/s8TdPl9msB2Y9/B+AxjsmvTAZ604VI1NkqN7kS2J6DQ2BM5UCPTK1o3vyjHMiO4ixj19EDZgSXzrk8I/i1/1Bcxhfe7FAW3kBJrSCdAuIsk57aEvnOIUmCz+VItFKzzOG97yPuYm3ITeg==",
-        "affiliation": "Mississippi State Univerty",
+        "affiliation": "Mississippi State University",
         "orcid": "0000-0002-7251-7661"
       },
       {
@@ -40,7 +40,7 @@
         "middleInitials": "",
         "lastName": "Bertin",
         "email": "P4PJ/NpPp4WtZydASunE7BCoW0WCN9YkDX0Vy2n1GgfBq3Z4Ju5acaVL0FJtnQlRLDNQCMQs+bfjMIxtFohZO1wOd1PAQhnR/D53vFTp9w4o1aEyxZA+ndYqO2JFaw6uxy5PS4DUP5O55KGgvO1vCtcK5c8iiJaPuf+TMrA6TsK+SM28Ndl1pjYqO3ufjRxhaxbRYIRPPyWXMHqgG8ugVHzQDoBU9gvDwDF5S9qD+rRFcYiCUpGFvqiL3QY0g2GrDeg70u4CJ5UxyW08DmwOMsJXkCtGd7lzGqdhkpKvbuSrJeKnpDQq/4NNF53wQWMhN7nS1GT8664MZ1EOc7Q3RQ==",
-        "affiliation": "Mississippi State Univerty",
+        "affiliation": "Mississippi State University",
         "orcid": "0000-0002-2820-8431"
       }
     ]
@@ -71,7 +71,7 @@
   },
   "additional": {
     "aboutAssay": "",
-    "forReview": "The kit is functional as the standard curve looks good, and the QC samples is within the expected range. However, it did not detect any of the either regular or ethanol-extracted serum samples. The spike recovery for both regular and ethanol-extracted samples ~87%. I don't think it is matrix effect. I think the coated antigen has limitation to bind equine serum leptin as this kit is designed for the detection of human blood leptin."
+    "forReview": "The kit appears functional (valid standard curve and QC samples within the expected range). However, it did not have any signal in either regular or ethanol-extracted serum samples. The spike recovery for both regular and ethanol-extracted samples was ~87%. In conclusion, there seems to cross-reactivity with equine leptin."
   },
   "addFiles": [
     "Human_Leptin_MilliporeSigma_09_15_2026.xlsx"
