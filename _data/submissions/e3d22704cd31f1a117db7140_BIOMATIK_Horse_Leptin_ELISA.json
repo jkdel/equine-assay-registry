@@ -1,4 +1,4 @@
-{
+ne{
   "date": "Wed, 07 Oct 2026 19:33:39 GMT",
   "contributor": {
     "firstName": "Md Nure Alam",
@@ -10,14 +10,14 @@
   },
   "assay": {
     "target": "Leptin",
-    "targetSpecies": "Horse",
+    "targetSpecies": "Equine",
     "type": "ELISA",
     "manufacturer": "BIOMATIK",
     "platform": "",
     "manufacturerRef": "EKC32359",
     "url": "https://biomatik.com/search?type=product&q=ekc32359",
     "availability": "Currently available",
-    "descriptor": "BIOMATIK Horse Leptin ELISA"
+    "descriptor": "BIOMATIK Equine Leptin ELISA"
   },
   "submissionType": "original",
   "submissionDetails": {
