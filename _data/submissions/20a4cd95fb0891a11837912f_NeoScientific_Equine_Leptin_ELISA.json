@@ -1,0 +1,80 @@
+{
+  "date": "Wed, 07 Oct 2026 21:14:17 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "D2NU+Ho0g6GJfAsMGHuF3N/dgty5dRfmfi/l+pUrlv/jyeXCDpWEDLcXYVt26PsYH22jW10ZhHu946Nbp8mPKH/xDV1xYU8cwiM3rWipj2E5oa0KhulhqOozwyLS0LsDsm6hMYMbS0D9rs2HZxZxMh+DCH7F7WAJj17IVEf/M48TMoujmJ4doYVXQQ+P5qWTcse7cilq9BYGkpN8gWU5J+8tGe5JXFMvqbXG2iHv0vIZykPDJwJBZzyHYAUgT+StwgKBpv4uZn1J0uoWEudXGHTat7EULVLuiVvPwoZ9lE1+iFB67OBQCZyGNse6G2L1Mw5mCTnRwhU1fgWACEIUOg==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Leptin",
+    "targetSpecies": "Equine",
+    "type": "ELISA",
+    "manufacturer": "NeoScientific",
+    "platform": "",
+    "manufacturerRef": "EL0045",
+    "url": "https://neobiolab.com/product/EL0045",
+    "availability": "Currently available",
+    "descriptor": "NeoScientific Equine Leptin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "D2NU+Ho0g6GJfAsMGHuF3N/dgty5dRfmfi/l+pUrlv/jyeXCDpWEDLcXYVt26PsYH22jW10ZhHu946Nbp8mPKH/xDV1xYU8cwiM3rWipj2E5oa0KhulhqOozwyLS0LsDsm6hMYMbS0D9rs2HZxZxMh+DCH7F7WAJj17IVEf/M48TMoujmJ4doYVXQQ+P5qWTcse7cilq9BYGkpN8gWU5J+8tGe5JXFMvqbXG2iHv0vIZykPDJwJBZzyHYAUgT+StwgKBpv4uZn1J0uoWEudXGHTat7EULVLuiVvPwoZ9lE1+iFB67OBQCZyGNse6G2L1Mw5mCTnRwhU1fgWACEIUOg==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "al6uE7MJLySt3Yng061Pp2PpQ1RDVGke8tRzqmFqO1pAHi/r/wu+dN/pb9Druz1q73uC0mEbP/IvSB6wHizJPfOzKG0Wvfv/sdUh1cXNvtnBlsjN2uTgzXZ9dR+GvYbV6bs9WsTltAPXoP39TYc4w6d5rhwmYomk/mLi9Y++qZE9jzdJPwOmMLVLcukLu6bGI2kHG0uei3KVwcOp+teAU/0FYaZtLV/EgXSpXzCNlTMvrxIRj0RAH8ZpbxKl8fO7DU+WuiVkedUfXzBvwtoZnY+hGZMKhtowlUXaeCbdn93SQa8AFp1P9XhpZUfU41JUZYlQk1hJofABBZD/6vqUfA==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Dilutional linearity (R²)",
+            "value": "0.94",
+            "unit": "R2",
+            "comment": ""
+          },
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "42.57",
+            "unit": "%",
+            "comment": "on average"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "We observed a significant difference in OD values between the two ELISA runs performed on different days, raising concerns about the kit's reproducibility. The results were inconsistent both intra- and inter-experiment. The spike recovery and dilution linearity were poor. Based on these results, we are not confident that this kit can reliably measure leptin in equine serum."
+  },
+  "addFiles": [
+    "Equine_Leptin_Neoscientific.xlsx"
+  ],
+  "id": "20a4cd95fb0891a11837912f_NeoScientific_Equine_Leptin_ELISA"
+}
