@@ -1,0 +1,67 @@
+{
+  "date": "Thu, 08 Oct 2026 22:14:40 GMT",
+  "contributor": {
+    "firstName": "Md Nure Alam",
+    "middleInitials": "",
+    "lastName": "Afsar",
+    "email": "ov3gnzoqyr2sJ7dyTmnRQ6X++yYEhbjc9uTWzlyaopGY4AQ9NH3MrM7S3QlFvM12V8FFILQ8CSnx74AJlm2V58cNPUNtYllBkfCFp71F+BsE8idrCZVzKyJB6PxgYmTp30OY2sQ3xNSPSNBARCAe4cmS7MtckZFpAnO/2KtnhgFg9aJCDmLWUt/70C7FMtyYLZQlOrse4AOiona0siV4eYfVHadq0mfH3nkV1pskNLogAN8194bA6myqQQ48l38DOW0MAGcZ5TBSaeiecQBA2ehmxdTdJ68QKeDxYcK4gSTajlmkfSVAziX6TvfhvC0/F7axQctfxBq3+Q8gPaYY3A==",
+    "affiliation": "Mississippi State Univerty",
+    "orcid": "0000-0002-7251-7661"
+  },
+  "assay": {
+    "target": "Adiponectin",
+    "targetSpecies": "Human",
+    "type": "ELISA",
+    "manufacturer": "Invitrogen",
+    "platform": "",
+    "manufacturerRef": "BMS2032-2",
+    "url": "https://www.thermofisher.com/elisa/product/Human-Adiponectin-ELISA-Kit/BMS2032-2",
+    "availability": "Currently available",
+    "descriptor": "Invitrogen Human Adiponectin ELISA"
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "approvedBy": "Mississippi State Univerty",
+      "fileNumber": "IACUC-25-506"
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "Md Nure Alam",
+        "middleInitials": "",
+        "lastName": "Afsar",
+        "email": "ov3gnzoqyr2sJ7dyTmnRQ6X++yYEhbjc9uTWzlyaopGY4AQ9NH3MrM7S3QlFvM12V8FFILQ8CSnx74AJlm2V58cNPUNtYllBkfCFp71F+BsE8idrCZVzKyJB6PxgYmTp30OY2sQ3xNSPSNBARCAe4cmS7MtckZFpAnO/2KtnhgFg9aJCDmLWUt/70C7FMtyYLZQlOrse4AOiona0siV4eYfVHadq0mfH3nkV1pskNLogAN8194bA6myqQQ48l38DOW0MAGcZ5TBSaeiecQBA2ehmxdTdJ68QKeDxYcK4gSTajlmkfSVAziX6TvfhvC0/F7axQctfxBq3+Q8gPaYY3A==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-7251-7661"
+      },
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "Dpje6P6wpddyCsC8k2cMOq6s3qXWww803/WuUskcSigs0RxLdKoRLA5513LhsTquimR7jbJx6SqsWBCExChZnAIpmmZggaVKtMTzzEuZvS/aKKDoX3czdzKmFXFCQUtp9scBZmFvxdvqZi5HmLGw4Oggn0NqUjvJ6bFvy+zkfAYUrnDCm8zk9l9xemgp5NyL7ytfHpQl3agTA5hAJHnaw936kjvpk/SBko5uFyB2maz4SI0bZ+vOIcdBavYcr0ROnqp5kmN04aktRGHmWpLjSpIlw2yulc5xyjD5seOmeCjOq3zXgVpWySiDSQCF2ODfDdAOlWNH3NkUh8ABL7z99Q==",
+        "affiliation": "Mississippi State Univerty",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": "The assay was used according to manufacturer instructions."
+  },
+  "additional": {
+    "aboutAssay": "",
+    "forReview": "The kit does not appear to be functional. We performed the experiment according to the manufacturer's instructions, but unfortunately, we did not detect any measurable signal in either the standards or the serum samples. Because the standards did not produce a detectable signal, we cannot evaluate the kit's performance or proceed with further assay validation."
+  },
+  "addFiles": [
+    "Human_Adiponectin_Invitrogen_09_25_26.xlsx"
+  ],
+  "id": "1e0dec129f67181a11d9534d3_Invitrogen_Human_Adiponectin_ELISA"
+}
