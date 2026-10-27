@@ -1,0 +1,65 @@
+{
+  "date": "Tue, 27 Oct 2026 16:22:49 GMT",
+  "contributor": {
+    "firstName": "",
+    "middleInitials": "",
+    "lastName": "",
+    "email": "owqp7/kGlhv/A4iyi3C7JiH4qFWmjJCNTRAHZXW0wA1D+N7qbFGdEJwgC9adFXd9k/QT3z/GCEhlYDXhuRLyIMNFICAdrTHEDSp7/Pi4TbY7iC7+MNAP0PpqFcQxNxV5OJP5w0nr3uFoWwnQfLiKWY78h+d8kYKMy+gm4hGE2nNvm44qmuX+7jrWHYq5lBZnfQUd5vPT9h0ZfitZlw15qRXB4N+Q/gdELOAlGVyuQTLirBQNoB+1I7VFaQ7YJ4RNW5FoVCG1m+XvMdS+EpsdVa3N9T6MHyhtUO8bRYAxx7n+pgyrwhE97DofLEVLCcCtzYZ9Iqd+rSyESkAixV9FtA==",
+    "affiliation": "Mississippi State University",
+    "orcid": ""
+  },
+  "assay": {
+    "target": "",
+    "targetSpecies": "",
+    "type": "",
+    "manufacturer": "",
+    "platform": "",
+    "manufacturerRef": "",
+    "url": "https://",
+    "availability": "",
+    "descriptor": ""
+  },
+  "submissionType": "original",
+  "submissionDetails": {
+    "ethics": {
+      "notRequired": true
+    },
+    "coi": "The authors have no conflicts of interests to disclose.",
+    "authors": [
+      {
+        "firstName": "François-René",
+        "middleInitials": "",
+        "lastName": "Bertin",
+        "email": "VINYpb6OmQXBpfePznWRKGjQk9m962VD4vuNH6UnE42uilIsojtv3UEdh79TOixDhzDA/mD+bC54+npk/WgBhDu2P3YYmmIjFtc5yc/suolDVr6DIfnXxdmrmg7z9gxCN4iyjGEbbFud17uywvBHEo9lgZVe8sTxt+E1cGDE0xrSz/p4pp/GnNEz98IMh9OV4i6ytbDUyhFshK8MTwc37c4FXE0xVIsC0c2nDzEQQZ/2PUiJOZkrXwa2cqlqnjrC44ozP+GUVlCoFwQsvJAXRsdKOcyppkwy3oqbyRq7vkFSL1XoMhIfxD+oL3IwK3SKXWjZVc7J09OHw7Dvdx/wqw==",
+        "affiliation": "Mississippi State University",
+        "orcid": "0000-0002-2820-8431"
+      }
+    ]
+  },
+  "validation": {
+    "matrices": [
+      {
+        "name": "Blood serum",
+        "metrics": [
+          {
+            "type": "Recovery on addition (spiking)",
+            "value": "75.43",
+            "unit": "%",
+            "comment": "on average for single ethanol extracted serum"
+          }
+        ],
+        "year": "2026",
+        "outcome": "Unsuccessful"
+      }
+    ],
+    "method": ""
+  },
+  "additional": {
+    "aboutAssay": "This kit does appear to be functional. However, it does not work for the equine serum. We could not detect any measurable signal in the equine serum sample. Additionally, the spike recovery was also poor. \n\nIn contrast, ethanol-extracted equine serum samples produced detectable signals with acceptable spike recovery, although dilution linearity remained poor. We evaluated both single and double ethanol extractions and observed improved dilution linearity following double extraction compared with single extraction. However, the results were still outside the acceptable range, indicating that the assay is not yet suitable for reliable quantification in equine serum.",
+    "forReview": ""
+  },
+  "addFiles": [
+    "Equine_Leptin_genorise.xlsx"
+  ],
+  "id": "778a9b729293381a17e2bead9_"
+}
